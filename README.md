@@ -9,7 +9,7 @@ To install and run the application in your local environment follow the instruct
 ### Prerequisites
 
 ```
-- XAMPP(https://www.apachefriends.org/tr/index.html) OR LAMPP OR VAMP 
+- XAMPP(https://www.apachefriends.org/index.html) OR LAMPP OR VAMP 
 - NODE.JS = https://nodejs.org/en/
 - COMPOSER = https://getcomposer.org/
 - Laradock
