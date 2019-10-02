@@ -1,93 +1,89 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('master')
 
-        <title>eDominations</title>
+@section('content')
+<?php 
+use Illuminate\Support\Facades\DB;
+?>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+<div class="container-fluid">
+eDominations
+</div>
+<?php
+use App\Http\Helpers\Endpointsv2;
+$getsomething = new Endpointsv2('');
+foreach($getsomething->getBattles()[0] as $row);
+?>
+        <!DOCTYPE html>
+        <html>
+        <title>
+            GET DATA
+        </title>
+        <div id="main">
+       <div id="main_form">
+        <body>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <table align="center" border="1px" style="width 600px; line-height:40px;">
+            <tr>
+                <th colspan="9" ><h2 align="center">BATTLES</h2></th>
+            </tr>
+            <div id="main_table">
+            <t>
+                <th>TYPE</th>
+                <th>ID</th>
+                <th>ATTACKER <th>ROUND</th></th>
+                <th>DEFENDER<th>ROUND</th></th>
+                <th>REGION</th>
+                <th>DATE</th>
+                <th>BATTLE INFO</th>
+                
+            </t>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+           <?php DB::table('battles')->delete();?>
+            <?php
+            
+    foreach ($getsomething->getBattles()[0] as $obj)  {
+        foreach ($obj as $key => $value) {
+            $insertArr[str_slug($key,'')] = $value;
+        } 
+        
+        $test =  DB::table('battles')->updateOrInsert(
+            array('id'=>$insertArr['id'],'attacker'=>$insertArr['attacker'],'defender'=> $insertArr['defender'],'region' => $insertArr['region'],'round' => $insertArr['round'],'roundatt' => $insertArr['roundatt'],'rounddef' => $insertArr['rounddef'],'date' => $insertArr['date']),
+            array('id'=>$insertArr['id'],'attacker'=>$insertArr['attacker'],'defender'=> $insertArr['defender'],'region' => $insertArr['region'],'round' => $insertArr['round'],'roundatt' => $insertArr['roundatt'],'rounddef' => $insertArr['rounddef'],'date' => $insertArr['date'])
+        );
+    }
+?>
+        <?php
+foreach($getsomething->getBattles()[0] as $row)
+{print "<tr>"
+       ."<td>". $row['Type']."</td>" 
+       ."<td>". $row['ID'] ."</td>"
+       ."<td><img src='img/flags/".$row['AttackerSlug'].".png' width='40' height='40'>". $row['Attacker'] ."</td>" 
+       ."<td><strong>".$row['RoundAtt']."</strong></td>"
+       ."<td><img src='img/flags/".$row['DefenderSlug'].".png' width='40' height='40'>". $row['Defender'] ."</td>" 
+       ."<td><strong>".$row['RoundDef']."</strong></td>"
+       ."<td>". $row['Region'] ."</td>" 
+       ."<td>". $row['Date'] ."</td>"
+       .'<td><a href="/battle/'.$row['ID'].'">BATTLE INFO</a>' 
+       ."</td>"
+       ."</tr>";
+       
+  }
+  "</div></div>";?>
 
-            .full-height {
-                height: 100vh;
-            }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+  
 
-            .position-ref {
-                position: relative;
-            }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
 
-            .content {
-                text-align: center;
-            }
 
-            .title {
-                font-size: 84px;
-            }
+                </table>
+        </body>
+        </div></div></div>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+        </html>
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-{{--            @if (Route::has('login'))--}}
-{{--                <div class="top-right links">--}}
-{{--                    @auth--}}
-{{--                        <a href="{{ url('/home') }}">Home</a>--}}
-{{--                    @else--}}
-{{--                        <a href="{{ route('login') }}">Login</a>--}}
+@endsection
 
-{{--                        @if (Route::has('register'))--}}
-{{--                            <a href="{{ route('register') }}">Register</a>--}}
-{{--                        @endif--}}
-{{--                    @endauth--}}
-{{--                </div>--}}
-{{--            @endif--}}
+@section('footer')
 
-            <div class="content">
-                <div class="title m-b-md">
-                    eDominations
-                </div>
-
-                <div class="links">
-                    <a href="https://edominations.com">eDominations</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+@endsection
