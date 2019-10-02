@@ -53,38 +53,42 @@ eDominations
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
 
     </head>
-    <body>
-
-<?php
+    <?php
 $GetBTL = new Endpointsv2($uriSegments[2]);
 foreach($GetBTL->getBattles()[0] as $rrw)
  ?>
+    <body>
 
-    <div class="container">
-    <div class="row lg-12">
-        <div class="col-lg-0"  style="border:1px;"><h1 class=text-right><?php 
-        echo 
-        "<td><img src='/img/flags2/".$rrw['AttackerSlug'].".png' width='120' height='120'>"."</td>"
-        ."<br><strong>".$rrw['Attacker']."</br></strong>" ?></h1></div>
-        <div class="col-lg-0"></div>
-        <div class="col-lg-9" style="border:1px;"><strong><p class=text-left> Total DMG:  <?php echo number_format($battleDef) ?> 
-        <br>Total Hits: <?php echo number_format($battleDefH) ?> 
-        <br>Total Players Hitted: <?php echo number_format($battleDefC) ?> </strong></br></p></div>
-        <div class="col-lg-0" style="border:1px;">
-        
-        
+
+
+   <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2">
+          <div class="col-lg-12"  style="border:1px;">
+            <h1 class="text-center"> 
+            <td><img src=<?php echo '"/img/flags2/'.$rrw['AttackerSlug'].'.png"'; ?> width='120' height='120'></td>
+              <br><strong> <?php echo $rrw['Attacker'];  ?> </br></strong>
+            </h1>
+          </div>
+          <div class="col-lg-12"><strong><p class="text-center"> Total DMG:  <?php echo number_format($battleAttack) ?> 
+            <br>Total Hits: <?php echo number_format($battleAttackH) ?> 
+            <br>Total Players Hitted: <?php echo number_format($battleAttackC) ?> </strong></br></p>
+          </div>
         </div>
-        <div class="col-lg-4" style="border:1px;">
-        <h1 class=text-right><?php 
-        echo 
-        "<td><img src='/img/flags2/".$rrw['DefenderSlug'].".png' width='120' height='120'>"."</td>"
-        ."<br><strong>".$rrw['Defender']."</br></strong>" ?></h1>
-        <strong><p class=text-left> Total DMG:  <?php echo number_format($battleAttack) ?> 
-        <br>Total Hits: <?php echo number_format($battleAttackH) ?> 
-        <br>Total Players Hitted: <?php echo number_format($battleAttackC) ?> </strong></br></p>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-2">
+          <div class="col-lg-12"> 
+            <h1 class="text-center"> 
+            <td><img src=<?php echo '"/img/flags2/'.$rrw['DefenderSlug'].'.png"'; ?> width='120' height='120'></td>
+            <br><strong><?php echo $rrw['Defender'];  ?></br></strong></h1>
+          </div>
+          <div class="col-lg-12">
+            <strong><p class="text-center"> Total DMG:  <?php echo number_format($battleDef) ?> 
+            <br>Total Hits: <?php echo number_format($battleDefH)?> 
+            <br>Total Players Hitted: <?php echo number_format($battleDefC) ?> </strong></br></p>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
     <div class="row justify-content-around">
     <div class="col-4">
