@@ -25,7 +25,6 @@ class CreateBattlesTable extends Migration
             $table->integer('Wall1')->nullable();
             $table->integer('Wall2')->nullable();
             $table->integer('Wall3')->nullable();
-            $table->timestamps();
         });
     }
 

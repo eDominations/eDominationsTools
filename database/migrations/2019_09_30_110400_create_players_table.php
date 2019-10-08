@@ -22,7 +22,6 @@ class CreatePlayersTable extends Migration
             $table->integer('LastSeen')->nullable();
             $table->integer('DMG1HIT')->nullable();
             $table->integer('TotalDMG')->nullable();
-            $table->timestamps();
         });
     }
 
