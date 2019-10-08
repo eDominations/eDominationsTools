@@ -15,6 +15,7 @@ use App\Http\Controllers\Controller;
 <head>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="/css/style.css">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 </head>
@@ -47,17 +48,30 @@ use App\Http\Controllers\Controller;
         </nav></div>
     
 <body>
-<?php 
+
+
+            </div>
+            
+<div id="row">
+<div class="col-8"> </div>
+  <div class="col-4">.. </div>
+</div>
+<div id="row"><div class="col-8">... </div>
+  <div class="col-4">.... </div></div>
+
+
+<?php  
+
 
 ?>
 
-<?php
-            
-        
-        ?>
-
-
-
+<h1 class="text-center"><br>Welcome eDominations-Tools</h1></br>
+<h2 class="text-center"><br>Now eDominations-Tools is alive..</h2></br>
+<h4 class="text-center">We have Battles - Battles History - Battle Details Alive.</h4>
+<h4 class="text-center"><br>In Battle History Page takes some seconds for load, please wait it( it gets 19.000 battle with details, so you wont have to search for it)  If you have any Question-Problem-Idea please write <a href="https://www.edominations.com/en/messages/compose/21460" target="_blank">here</a> or <a href="https://www.edominations.com/en/messages/compose/1140" target="_blank">here</a>.</h4></br>
+<h2 class="text-center">STAY TUNED FOR NEXT UPDATES..<i class="glyphicon glyphicon-thumbs-up" style="color:blue"></h2></i>
+ 
+		
 </body>
 </html>
 

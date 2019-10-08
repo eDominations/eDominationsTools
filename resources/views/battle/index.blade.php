@@ -16,7 +16,9 @@ foreach($getsomething->getBattles()[0] as $row);
         <title>
             eDominations-Tools
         </title>
-      
+        <link rel="stylesheet" href="/css/style.css">
+
+
         <body>
         
         <div id="wrapper">
