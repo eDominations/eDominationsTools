@@ -1,4 +1,4 @@
-
+@extends('master')
 
 <?php
 use Illuminate\Support\Collection;
@@ -38,28 +38,56 @@ $battleDefC = DB::table('battledamage')->where('SIDE','defense')->count();
 $battleAttackC = DB::table('battledamage')->where('SIDE','attack')->count();
 $battleDef2 = DB::table('battledamage')->where('SIDE','defense')->get();
 $battleAtt = DB::table('battledamage')->where('SIDE','attack')->get();
+
+
+
+
+
+
 ?>
 
 
 
-<div class="container-fluid">
-eDominations
-</div>
     <!DOCTYPE html>
     <html>
     <head>
-    <title>BattleDetails</title>
+
     <link rel="stylesheet" href="/css/bootstrap.min.css" >
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
 
     </head>
-    <?php
+    <body>
+    <div id="wrapper">
+        <div class="overlay"></div>
+    
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                   
+                </li>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/battle">Battles</a>
+                </li>
+                <li>
+                    <a href="/battle-history">Battle History</a>
+                </li>
+                <li>
+                    <a href="#">Team</a>
+                </li>
+                
+            
+              
+            </ul>
+        </nav></div>
+
+<?php
 $GetBTL = new Endpointsv2($uriSegments[2]);
 foreach($GetBTL->getBattles()[0] as $rrw)
  ?>
-    <body>
-
-
 
    <div class="row">
         <div class="col-lg-2"></div>
@@ -98,7 +126,7 @@ foreach($GetBTL->getBattles()[0] as $rrw)
       
           <tr>  <th>Picture</th>
                 <th>NAME</th>
-                <th>ID</th>
+                <th>MU DETAILS</th>
                 <th>DMG</th>
                 <th>HITS</th>
                
@@ -108,19 +136,24 @@ foreach($GetBTL->getBattles()[0] as $rrw)
 
       
 
-       
-          <?php
+
+
+
         
-        foreach ($battleAtt as $obj5)  
+<?php
+
+        foreach ($battleAtt as $obj5)
+        
          echo 
      "<tr><td><img src='https://www.edominations.com/public/upload/citizen/".$obj5->ID.".jpg' width='40' height='40'>"."</td>" 
-     ."<td>".$obj5->Name."</td>"
-     ."<td>".$obj5->ID."</td>" 
+     ."<td><a href='https://www.edominations.com/en/profile/".$obj5->ID."'>" .$obj5->Name."</td></a>"
+     .'<td><a href="/battle-mu/'.$uriSegments[2].'" class="btn btn-dark btn-lg">'.'Mu Details'.'</a></td>'  
      ."<td>".number_format($obj5->DMG)."</td>"
      ."<td>".$obj5->Hits."</td></tr>";
- 
+    
+    
   ?>
-  
+
           
           </tbody>
           </table>
@@ -137,7 +170,7 @@ foreach($GetBTL->getBattles()[0] as $rrw)
           <tr>
                 <th>Picture</th>
                 <th>NAME</th>
-                <th>ID</th>
+                <th>MU DETAILS</th>
                 <th>DMG</th>
                 <th>HITS</th>
             
@@ -149,8 +182,8 @@ foreach($GetBTL->getBattles()[0] as $rrw)
 foreach ($battleDef2 as $obj4)  
  echo 
 "<tr><td><img src='https://www.edominations.com/public/upload/citizen/".$obj4->ID.".jpg' width='40' height='40'>"."</td>" 
-."<td>".$obj4->Name."</td>"
-."<td>".$obj4->ID."</td>" 
+."<td><a href='https://www.edominations.com/en/profile/".$obj4->ID."'>" .$obj4->Name."</td></a>"
+.'<td><a href="/battle-mu/'.$uriSegments[2].'" class="btn btn-dark btn-lg">'.'Mu Details'.'</a></td>' 
 ."<td>".number_format($obj4->DMG)."</td>"
 ."<td>".$obj4->Hits."</td>";
 

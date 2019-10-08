@@ -13,8 +13,8 @@ class BattlesController extends Controller
      */
     public function index()
     {
-        $battles = DB::table('battledamage')->get();
-        return view('battle.index')->with('battle', $battles);
+       
+        return view('battle.index')->with('battle');
     }
 
     /**

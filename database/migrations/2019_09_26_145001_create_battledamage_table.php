@@ -21,7 +21,6 @@ class CreateBattleDamageTable extends Migration
             $table->integer('Hits')->nullable();
             $table->integer('Unit')->nullable();
             $table->text('CountrySlug')->nullable();
-            $table->timestamps();
         });
     }
 
