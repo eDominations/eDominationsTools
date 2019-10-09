@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content')
-<?php 
+<?php
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
@@ -25,12 +25,12 @@ use App\Http\Controllers\Controller;
 
   <div id="wrapper">
         <div class="overlay"></div>
-    
+
         <!-- Sidebar -->
         <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
-                   
+
                 </li>
                 <li>
                     <a href="/">Home</a>
@@ -44,17 +44,17 @@ use App\Http\Controllers\Controller;
                 <li>
                 <a href="/country">Countries</a>
                 </li>
-                
-            
-              
+
+
+
             </ul>
         </nav></div>
-    
+
 <body>
 
 
-     
-            
+
+
 <div id="row">
 <div class="col-8"> </div>
   <div class="col-4">.. </div>
@@ -63,31 +63,28 @@ use App\Http\Controllers\Controller;
   <div class="col-4">.... </div></div>
 
 
-<?php  
+<?php
 
 
 ?>
 
 <h1 class="text-center"><br>Welcome eDominations-Tools</h1></br>
+<div id="adsdiv" class="text-center"> </div>
 <h2 class="text-center"><br>Now eDominations-Tools is alive..</h2></br>
+<div class="text-center">Contributed by <a href="https://www.edominations.com/en/profile/21460">byBatu</a>, <a href="https://www.edominations.com/en/profile/1140">RealMarcial</a> </div>
 <h4 class="text-center">We have Battles - Battles History - Battle Details Alive.</h4>
 <h4 class="text-center"><br>In Battle History Page takes some seconds for load, please wait it( it gets 19.000 battle with details, so you wont have to search for it)  If you have any Question-Problem-Idea please write <a href="https://www.edominations.com/en/messages/compose/21460" target="_blank">here</a> or <a href="https://www.edominations.com/en/messages/compose/1140" target="_blank">here</a>.</h4></br>
 <h2 class="text-center">STAY TUNED FOR NEXT UPDATES..<i class="glyphicon glyphicon-thumbs-up" style="color:blue"></h2></i>
- 
+
 
 </body>
 </html>
-
-=======
     <?php
     use Illuminate\Support\Facades\DB;
     ?>
 
-    <div class="container-fluid">
-        eDominations
-    </div>
     <?php
-    use App\Http\Helpers\Endpointsv2;
+
     $getsomething = new Endpointsv2('');
     foreach($getsomething->getBattles()[0] as $row);
     ?>
