@@ -20,6 +20,9 @@ use App\Http\Controllers\Controller;
  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 </head>
 
+
+
+
   <div id="wrapper">
         <div class="overlay"></div>
     
@@ -39,7 +42,7 @@ use App\Http\Controllers\Controller;
                     <a href="/battle-history">Battle History</a>
                 </li>
                 <li>
-                    <a href="#">Team</a>
+                <a href="/country">Countries</a>
                 </li>
                 
             
@@ -50,7 +53,7 @@ use App\Http\Controllers\Controller;
 <body>
 
 
-            </div>
+     
             
 <div id="row">
 <div class="col-8"> </div>
@@ -71,7 +74,7 @@ use App\Http\Controllers\Controller;
 <h4 class="text-center"><br>In Battle History Page takes some seconds for load, please wait it( it gets 19.000 battle with details, so you wont have to search for it)  If you have any Question-Problem-Idea please write <a href="https://www.edominations.com/en/messages/compose/21460" target="_blank">here</a> or <a href="https://www.edominations.com/en/messages/compose/1140" target="_blank">here</a>.</h4></br>
 <h2 class="text-center">STAY TUNED FOR NEXT UPDATES..<i class="glyphicon glyphicon-thumbs-up" style="color:blue"></h2></i>
  
-		
+
 </body>
 </html>
 

@@ -40,7 +40,7 @@ foreach($getsomething->getBattles()[0] as $row);
                     <a href="/battle-history">Battle History</a>
                 </li>
                 <li>
-                    <a href="#">Team</a>
+                <a href="/country">Countries</a>
                 </li>
                 
             

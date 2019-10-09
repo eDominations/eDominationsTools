@@ -74,7 +74,7 @@ GROUP BY Unit , mudetails.MilitaryUnit, Country');
                     <a href="/battle-history">Battle History</a>
                 </li>
                 <li>
-                    <a href="#">Team</a>
+                <a href="/country">Countries</a>
                 </li>
                 
             
