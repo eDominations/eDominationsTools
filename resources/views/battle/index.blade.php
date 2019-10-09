@@ -16,7 +16,9 @@ foreach($getsomething->getBattles()[0] as $row);
         <title>
             eDominations-Tools
         </title>
-      
+        <link rel="stylesheet" href="/css/style.css">
+
+
         <body>
         
         <div id="wrapper">
@@ -38,7 +40,7 @@ foreach($getsomething->getBattles()[0] as $row);
                     <a href="/battle-history">Battle History</a>
                 </li>
                 <li>
-                    <a href="#">Team</a>
+                <a href="/country">Countries</a>
                 </li>
                 
             

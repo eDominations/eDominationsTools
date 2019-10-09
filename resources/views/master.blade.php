@@ -17,6 +17,7 @@ header("Access-Control-Allow-Origin: *");
     <!-- Styles -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" >
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- Our Custom CSS -->
  
@@ -53,8 +54,8 @@ header("Access-Control-Allow-Origin: *");
     <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
 @yield('additional_scripts')
+</div>
 </body>
 <footer>
     @yield('footer')

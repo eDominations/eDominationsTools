@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::resource('battle', 'BattlesController');
 Route::resource('battle-history','BattleHistory');
 Route::resource('battle-mu', 'BattleMUController');
+Route::resource('country', 'Country');
