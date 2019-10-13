@@ -70,16 +70,16 @@ class Apiinsert extends Command
 
 ###SAVAŞ İÇİN UPDATE (ID INSERTLENMİŞ OLMALI-- !!!!CRONA BAĞLANACAK OLAN BU)###
 
- // foreach(range(19199,22000) as $range){
-   // $getsomething = new Endpointsv2($range);
-   // foreach ($getsomething->getBattles()[0] as $obj) {
-   //  foreach ($obj as $key => $value) {
-   //  $insertArr[str_slug($key,'')] = $value;
- // } 
- // $test =  DB::table('battlehist')->where('ID', $range)->update(
-  //  array('attacker'=>$insertArr['attacker'],'attackerslug'=>$insertArr['attackerslug'],'defenderslug'=>$insertArr['defenderslug'],'type'=>$insertArr['type'],'defender'=> $insertArr['defender'],'region' => $insertArr['region'],'round' => $insertArr['round'],'roundatt' => $insertArr['roundatt'],'rounddef' => $insertArr['rounddef'],'date' => $insertArr['date'],'wall1' => $insertArr['wall1'],'wall2' => $insertArr['wall2'],'wall3' => $insertArr['wall3'])
- // );
- // }}
+ //foreach(range(19199,22000) as $range){
+ //$getsomething = new Endpointsv2($range);
+ //foreach ($getsomething->getBattles()[0] as $obj) {
+ //foreach ($obj as $key => $value) {
+ //$insertArr[str_slug($key,'')] = $value;
+ //} 
+  //$test =  DB::table('battlehist')->where('ID', $range)->update(
+  //array('attacker'=>$insertArr['attacker'],'attackerslug'=>$insertArr['attackerslug'],'defenderslug'=>$insertArr['defenderslug'],'type'=>$insertArr['type'],'defender'=> $insertArr['defender'],'region' => $insertArr['region'],'round' => $insertArr['round'],'roundatt' => $insertArr['roundatt'],'rounddef' => $insertArr['rounddef'],'date' => $insertArr['date'],'wall1' => $insertArr['wall1'],'wall2' => $insertArr['wall2'],'wall3' => $insertArr['wall3'])
+  //);
+ //}}
  // echo 'JOB IS DONE';
 ###VATANDAŞ (PLAYER INSERT) ##
   //  $range = range(55393,59399);
@@ -95,9 +95,9 @@ class Apiinsert extends Command
 // echo 'JOB IS DONE';
 
 ###VATANDAŞ (PLAYER UPDATE --- !!!! CRONA BAĞLANACAK) ##
- // $range = range(55300,55399);
- // foreach($range as $range2){
- // $getsomething = new Endpointsv2($range2);
+// $range = range(100,15000);
+// foreach($range as $range2){
+//  $getsomething = new Endpointsv2($range2);
 //  foreach ($getsomething->getCitizen() as $insertArr)
            
 //$test =  DB::table('players')->where('ID', $range2)->update(
@@ -107,6 +107,16 @@ class Apiinsert extends Command
 //echo 'JOB IS DONE';
 
 
-
+##HIZLI VATANDAŞ UPDATE - MU ÜZERİNDEN (LVL VE LASTSEENAGO YOK BURDA)##
+//$range = range(1,1009);
+//            foreach($range as $range2){
+ //            $getsomething = new Endpointsv2($range2);
+ //            foreach ($getsomething->getUnitMembers() as $insertArr)
+                      
+ //          $test =  DB::table('players')->where('ID', $insertArr['ID'])->update(
+ //          array('Name'=>$insertArr['Name'],'DMG1HIT' => $insertArr['DMG1HIT'],'MilitaryRank2'=> $insertArr['MilitaryRank'],'Strength' => $insertArr['Strength'],'MilitaryUnitID' => $range2,'RankPoint' => $insertArr['Rank'])
+ //          );
+ //        }
+//         echo 'JOB IS DONE';
     }
 }

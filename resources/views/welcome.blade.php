@@ -26,8 +26,7 @@ use App\Http\Controllers\Controller;
   <div id="wrapper">
         <div class="overlay"></div>
     
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+        <nav class="navbar navbar-inverse navbar-fixed" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
                    
@@ -44,10 +43,10 @@ use App\Http\Controllers\Controller;
                 <li>
                 <a href="/country">Countries</a>
                 </li>
-                
-            
-              
-            </ul>
+                <li>
+                <a href="/players">Players</a>
+                </li>
+             </ul>
         </nav></div>
     
 <body>
@@ -70,7 +69,8 @@ use App\Http\Controllers\Controller;
 
 <h1 class="text-center"><br>Welcome eDominations-Tools</h1></br>
 <h2 class="text-center"><br>Now eDominations-Tools is alive..</h2></br>
-<h4 class="text-center">We have Battles - Battles History - Battle Details Alive.</h4>
+<h4 class="text-center">We have Battles - Battles History - Battle Details - Country - Players Stats Alive.</h4>
+<h4 class="text-center">Players stats has top 300 in search panel , for lower than 300 please use page numbers in bottom .</h4>
 <h4 class="text-center"><br>In Battle History Page takes some seconds for load, please wait it( it gets 19.000 battle with details, so you wont have to search for it)  If you have any Question-Problem-Idea please write <a href="https://www.edominations.com/en/messages/compose/21460" target="_blank">here</a> or <a href="https://www.edominations.com/en/messages/compose/1140" target="_blank">here</a>.</h4></br>
 <h2 class="text-center">STAY TUNED FOR NEXT UPDATES..<i class="glyphicon glyphicon-thumbs-up" style="color:blue"></h2></i>
  

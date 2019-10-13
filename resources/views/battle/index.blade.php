@@ -42,10 +42,10 @@ foreach($getsomething->getBattles()[0] as $row);
                 <li>
                 <a href="/country">Countries</a>
                 </li>
-                
-            
-              
-            </ul>
+                <li>
+                <a href="/players">Players</a>
+                </li>
+             </ul>
         </nav></div>
 
 
@@ -106,11 +106,7 @@ foreach($getsomething->getBattles()[0] as $row)
   }
   "</div></div>";?>
 </tr>
- </tbody>
-                </table>
-                </div>
-  </div>
-      
+ </tbody></table></div></div>
         </body>
         </html>
 

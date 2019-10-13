@@ -24,7 +24,7 @@ use App\Http\Controllers\Controller;
         <div class="overlay"></div>
     
         <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+        <nav class="navbar navbar-inverse navbar-fixed" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
                    
@@ -39,12 +39,12 @@ use App\Http\Controllers\Controller;
                     <a href="/battle-history">Battle History</a>
                 </li>
                 <li>
-                    <a href="/country">Countries</a>
+                <a href="/country">Countries</a>
                 </li>
-                
-            
-              
-            </ul>
+                <li>
+                <a href="/players">Players</a>
+                </li>
+             </ul>
         </nav></div>
        
 <body>

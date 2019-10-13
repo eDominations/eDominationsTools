@@ -76,10 +76,10 @@ GROUP BY Unit , mudetails.MilitaryUnit, Country');
                 <li>
                 <a href="/country">Countries</a>
                 </li>
-                
-            
-              
-            </ul>
+                <li>
+                <a href="/players">Players</a>
+                </li>
+             </ul>
         </nav></div>
 
 <?php
