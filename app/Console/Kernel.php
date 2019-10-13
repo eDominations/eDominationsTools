@@ -24,8 +24,25 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('battle:update')
+                 ->everyMinute()
+                 ->withoutOverlapping();
+        $schedule->command('fast:updateplayer')
+                 ->everyThirtyMinutes()
+                 ->withoutOverlapping();
+        $schedule->command('player:update')                
+                 ->cron('0 */3 * * *')
+                 ->withoutOverlapping();
+        $schedule->command('player:update2')                
+                 ->cron('0 */3 * * *')
+                 ->withoutOverlapping();
+        $schedule->command('player:update3')                
+                 ->cron('0 */3 * * *')
+                 ->withoutOverlapping();
+        $schedule->command('player:update4')                
+                 ->cron('0 */3 * * *')
+                 ->withoutOverlapping();
+    
     }
 
     /**

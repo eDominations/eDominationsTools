@@ -50,20 +50,12 @@ use App\Http\Controllers\Controller;
         </nav></div>
     
 <body>
-
-
-     
-            
+              
 <div id="row">
 <div class="col-8"> </div>
-  <div class="col-4">.. </div>
-</div>
-<div id="row"><div class="col-8">... </div>
-  <div class="col-4">.... </div></div>
-
+  <div class="col-4"></div>
 
 <?php  
-
 
 ?>
 
@@ -73,11 +65,7 @@ use App\Http\Controllers\Controller;
 <h4 class="text-center">Players stats has top 300 in search panel , for lower than 300 please use page numbers in bottom .</h4>
 <h4 class="text-center"><br>In Battle History Page takes some seconds for load, please wait it( it gets 19.000 battle with details, so you wont have to search for it)  If you have any Question-Problem-Idea please write <a href="https://www.edominations.com/en/messages/compose/21460" target="_blank">here</a> or <a href="https://www.edominations.com/en/messages/compose/1140" target="_blank">here</a>.</h4></br>
 <h2 class="text-center">STAY TUNED FOR NEXT UPDATES..<i class="glyphicon glyphicon-thumbs-up" style="color:blue"></h2></i>
- 
-
-</body>
-</html>
-
+</body></html>
 
 @endsection
 
