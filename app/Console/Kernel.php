@@ -13,7 +13,12 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        'App\Console\Commands\BattleUpdate',
+        'App\Console\Commands\FastUpdatePlayer',
+        'App\Console\Commands\PlayerUpdate',
+        'App\Console\Commands\PlayerUpdate2',
+        'App\Console\Commands\PlayerUpdate3',
+        'App\Console\Commands\PlayerUpdate4'
     ];
 
     /**

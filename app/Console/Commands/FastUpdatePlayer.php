@@ -46,7 +46,7 @@ $range = range(1,1009);
            foreach ($getsomething->getUnitMembers() as $insertArr)
                       
          $test =  DB::table('players')->where('ID', $insertArr['ID'])->update(
-          array('Name'=>$insertArr['Name'],'DMG1HIT' => $insertArr['DMG1HIT'],'MilitaryRank2'=> $insertArr['MilitaryRank'],'Strength' => $insertArr['Strength'],'MilitaryUnitID' => $range2,'RankPoint' => $insertArr['Rank'])
+          array('Name'=>$insertArr['Name'],'Energy'=>$insertArr['Energy'],'DMG1HIT' => $insertArr['DMG1HIT'],'MilitaryRank2'=> $insertArr['MilitaryRank'],'Strength' => $insertArr['Strength'],'MilitaryUnitID' => $range2,'RankPoint' => $insertArr['Rank'])
          );
        }
          echo 'JOB IS DONE';

@@ -56,6 +56,11 @@ use App\Http\Controllers\Controller;
   <div class="col-4"></div>
 
 <?php  
+$test = DB::table('battles')->first();
+$battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','>',19259)->get(); 
+
+
+
 
 ?>
 

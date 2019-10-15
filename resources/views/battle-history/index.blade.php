@@ -28,7 +28,7 @@ $getsomething = new Endpointsv2('');
 $test = DB::table('battles')->first();
 
 
-$battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->get(); 
+$battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','>',17000)->get(); 
 
 ?>
         <!DOCTYPE html>

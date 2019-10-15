@@ -73,6 +73,12 @@ $bat5 = DB::select("SELECT COUNT(CS) AS CSS , CS
 FROM players
 WHERE LastSeenAgo >= 8 AND Banned='NO'
 GROUP BY CS");
+
+
+
+$bt6 = DB::table('players')->where('LastSeenAgo','<',8 )->count(); 
+
+
 ?>
 
 
@@ -101,20 +107,22 @@ for($i=0, $count = count($bat2);$i<$count;$i++) {
     $bat22 = $bat2[$i];
     $bat33 = $bat3[$i];
     $bat55 = $bat5[$i];
-    $bat44 = $bat4[$i];    
+    $bat44 = $bat4[$i]; 
+ 
          echo 
          "<tr>"
-         ."<td><img src='img/flags2/".str_replace(" ", "-",$bat22->CS).".png' width='40' height='40'>"."</td>" 
+         ."<td><img src='img/flags2/".str_replace(" ", "-",$bat22->CS).".png' width='50' height='50'>"."</td>" 
          ."<td>". $bat22->CS."</td>" 
          ."<td>". $bat33->PLY."</td>" 
          ."<td>". $bat22->Ban."</td>" 
          ."<td>". $bat55->CSS."</td>" 
-         ."<td>". $bat44->CSS."</td>" 
+         ."<td>". $bat44->CSS.str_repeat("&nbsp;", 8).'%'.number_format($new = ($bat44->CSS / $bt6) * '100')."</td>" 
          ."<td>". number_format($battleMu->DMGPOWER)."</td>" 
          ."</tr>";
         }
     
   ?>
+
 
  </tbody>
 
