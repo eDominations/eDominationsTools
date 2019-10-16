@@ -46,6 +46,9 @@ use App\Http\Controllers\Controller;
                 <li>
                 <a href="/players">Players</a>
                 </li>
+                <li>
+                <a href="/shame">SHAME-WALL</a>
+                </li>
              </ul>
         </nav></div>
     
@@ -58,10 +61,6 @@ use App\Http\Controllers\Controller;
 <?php  
 $test = DB::table('battles')->first();
 $battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','>',19259)->get(); 
-
-
-
-
 ?>
 
 <h1 class="text-center"><br>Welcome eDominations-Tools</h1></br>

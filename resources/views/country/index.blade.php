@@ -44,6 +44,9 @@ use App\Http\Controllers\Controller;
                 <li>
                 <a href="/players">Players</a>
                 </li>
+                <li>
+                <a href="/shame">SHAME-WALL</a>
+                </li>
              </ul>
         </nav></div>
        
@@ -116,7 +119,7 @@ for($i=0, $count = count($bat2);$i<$count;$i++) {
          ."<td>". $bat33->PLY."</td>" 
          ."<td>". $bat22->Ban."</td>" 
          ."<td>". $bat55->CSS."</td>" 
-         ."<td>". $bat44->CSS.str_repeat("&nbsp;", 8).'%'.number_format($new = ($bat44->CSS / $bt6) * '100')."</td>" 
+         ."<td>". $bat44->CSS.str_repeat("&nbsp;", 8).'%'.number_format($new = ($bat44->CSS / $bt6) * '100' ,2, ',', ' ')."</td>" 
          ."<td>". number_format($battleMu->DMGPOWER)."</td>" 
          ."</tr>";
         }

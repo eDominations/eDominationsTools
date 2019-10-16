@@ -13,3 +13,4 @@ Route::resource('battle-history','BattleHistory');
 Route::resource('battle-mu', 'BattleMUController');
 Route::resource('country', 'Country');
 Route::resource('players', 'PlayersController');
+Route::resource('shame' ,'Shame');

@@ -38,7 +38,7 @@ class PlayerUpdate2 extends Command
     public function handle()
     {
             ###VATANDAŞ (PLAYER UPDATE --- !!!! CRONA BAĞLANACAK) ##
-$range = range(15000,30000);
+$range = range(1,50000);
 foreach($range as $range2){
 $getsomething = new Endpointsv2($range2);
 foreach ($getsomething->getCitizen() as $insertArr)

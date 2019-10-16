@@ -40,14 +40,14 @@ class PlayerUpdate extends Command
     public function handle()
     {
         ###VATANDAŞ (PLAYER UPDATE --- !!!! CRONA BAĞLANACAK) ##
-$range = range(100,15000);
-foreach($range as $range2){
-$getsomething = new Endpointsv2($range2);
-foreach ($getsomething->getCitizen() as $insertArr)
-           
-$test =  DB::table('players')->where('ID', $range2)->update(
-array('Name'=>$insertArr['Name'],'Level'=> $insertArr['Level'],'CS' => $insertArr['CS'],'Strength' => $insertArr['Strength'],'LastSeen' => $insertArr['LastSeen'],'DMG1HIT' => $insertArr['DMG1HIT'],'LastSeenAgo' => $insertArr['LastSeenAgo'],'Banned' => $insertArr['Banned'],'MilitaryRank' => $insertArr['MilitaryRank'],'TotalDMG' => $insertArr['TotalDMG'])
-); }
+        $range = range(1,78);
+        foreach($range as $range2){
+        $getsomething = new Endpointsv2($range2);
+        foreach ($getsomething->getCitizenship() as $obj)
+        foreach ($obj as $insertArr)
+        $test =  DB::table('players')->where('ID', $insertArr)->update(
+        array('Name'=>$insertArr['Name'],'Level'=> $insertArr['Level'],'Strength' => $insertArr['Strength'],'LastSeen' => $insertArr['LastSeen'],'DMG1HIT' => $insertArr['DMG1HIT'],'LastSeenAgo' => $insertArr['LastSeenAgo'],'Banned' => $insertArr['Banned'],'MilitaryRank' => $insertArr['MilitaryRank'])
+        ); }
 
 echo 'JOB IS DONE';
     }

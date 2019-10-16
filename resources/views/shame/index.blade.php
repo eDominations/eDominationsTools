@@ -28,8 +28,14 @@ foreach($getsomething->getBattles()[0] as $row);
 
         <body>
         <?php
-$player= DB::table('players')->join('mudetails','mudetails.ID','=','players.MilitaryUnitID')->select("players.Name","players.Energy","players.Level","players.Strength","players.CS","players.MilitaryUnitID","players.MilitaryRank","players.DMG1HIT","players.TotalDMG","players.MilitaryRank2" , "mudetails.MilitaryUnit" , "players.ID")->orderBy("players.TotalDMG" ,"DESC")->paginate(300);
-?>
+   
+        
+        $bat = DB::select("SELECT Name, CS , ID , Strength,Banned , LastSeenAgo, TotalDMG , Level
+        FROM players
+        WHERE Banned='yes'
+        AND LastSeenAgo <= 14");
+        
+        ?>
 
         
         <div id="wrapper">
@@ -64,65 +70,46 @@ $player= DB::table('players')->join('mudetails','mudetails.ID','=','players.Mili
 
 
         <div class="row justify-content-center">        
-        <div class="col-11">
-        <table class="table table-light table-responsive-sm table-bordered players " >
+        <div class="col-8">
+        <div class='table-responsive'>
+        <table class="table table-light table-bordered players" >
         <thead class="thead-dark">
 
 
         <tr>
-                <th colspan="11" ><h2 align="center">PLAYERS</h2></th>
+                <th colspan="8" ><h2 align="center">SHAME-WALL</h2></th>
                 </tr>
          
             
                 <th scope="col"> </th>
                 <th scope="col">ID</th>
                 <th scope="col">NAME </th>
-                <th scope="col">ENERGY</th>
                 <th scope="col">LEVEL</th>
                 <th scope="col">STRENGH</th>
                 <th scope="col">CITIZENSHIP</th>
-                <th scope="col">MILITARY UNIT</th>
-                <th scope="col">MILITARY RANK</th>
-                <th scope="col">DAMAGE POWER</th>
                 <th scope="col">TOTAL DMG(LIFE-TIME)</th>
+                <th scope="col">BANNED?</th>
                 </thead>
  <tbody>
 
  <?php
 
-foreach ($player as $obj5)
+foreach ($bat as $obj5)
 
  echo 
 "<tr><td><img src='https://www.edominations.com/public/upload/citizen/".$obj5->ID.".jpg' width='80' height='80'>"."</td>" 
 .'<td>'.$obj5->ID.'</a></td>' 
 ."<td><a href='https://www.edominations.com/en/profile/".$obj5->ID."'>" .$obj5->Name."</td></a>"
-."<td><div class='progress'><div class='progress-bar progress-bar-striped progress-bar-animated' role='progressbar' aria-valuenow=$obj5->Energy aria-valuemin='0' aria-valuemax= '2000' style='width:$obj5->Energy%'>"."</div></div></td>"
 .'<td>'.$obj5->Level.'</a></td>'  
 .'<td>'.$obj5->Strength.'</a></td>' 
 ."<td><img src='/img/flags2/".str_replace(" ", "-",$obj5->CS).".png' width='50' height='50'>".$obj5->CS."</td>" 
-.'<td>'.$obj5->MilitaryUnit.'</a></td>' 
-.'<td>'.$obj5->MilitaryRank .'-'. $obj5->MilitaryRank2. "<img src='https://www.edominations.com/public/game/ranks/".$obj5->MilitaryRank.".png'>" .'</a></td>' 
-."<td>".number_format($obj5->DMG1HIT)."</td>"
-."<td>".number_format($obj5->TotalDMG)."</td></tr>";?>
+.'<td>'.number_format($obj5->TotalDMG).'</a></td>' 
+."<td>".$obj5->Banned."</td></tr>";?>
 
  </tbody>
  
- <tfoot>
- <th scope="col"> </th>
-                <th scope="col">ID</th>
-                <th scope="col">NAME </th>
-                <th scope="col">ENERGY</th>
-                <th scope="col">LEVEL</th>
-                <th scope="col">STRENGH</th>
-                <th scope="col">CITIZENSHIP</th>
-                <th scope="col">MILITARY UNIT</th>
-                <th scope="col">MILITARY RANK</th>
-                <th scope="col">DAMAGE POWER</th>
-                <th scope="col">TOTAL DMG(LIFE-TIME)</th>
- </tfoot>
- </table> {{$player->links()}}</div>
  </div>
-
+ </div>
 
 
 
@@ -135,7 +122,8 @@ foreach ($player as $obj5)
         <script src="/js/bootstrap.min.js"></script>
         <script>
        var table = $('.players').DataTable({
-        paging: true,
+        paging: false,
+        searching: false,
         lengthMenu: [23]
         });
 

@@ -66,6 +66,9 @@ $battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','
                 <li>
                 <a href="/players">Players</a>
                 </li>
+                <li>
+                <a href="/shame">SHAME-WALL</a>
+                </li>
              </ul>
         </nav></div>
         <body class='body'>

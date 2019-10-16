@@ -74,6 +74,9 @@ $battleAtt = DB::table('battledamage')->where('SIDE','attack')->get();?>
                 <li>
                 <a href="/players">Players</a>
                 </li>
+                <li>
+                <a href="/shame">SHAME-WALL</a>
+                </li>
              </ul>
         </nav></div>
 
