@@ -28,7 +28,7 @@ $getsomething = new Endpointsv2('');
 $test = DB::table('battles')->first();
 
 
-$battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->get(); 
+$battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','>',17000)->get(); 
 
 ?>
         <!DOCTYPE html>
@@ -46,7 +46,7 @@ $battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->get();
         <div class="overlay"></div>
     
         
-        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+        <nav class="navbar navbar-inverse navbar-fixed" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
                    
@@ -63,10 +63,13 @@ $battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->get();
                 <li>
                 <a href="/country">Countries</a>
                 </li>
-                
-            
-              
-            </ul>
+                <li>
+                <a href="/players">Players</a>
+                </li>
+                <li>
+                <a href="/shame">SHAME-WALL</a>
+                </li>
+             </ul>
         </nav></div>
         <body class='body'>
         <body>

@@ -1,15 +1,8 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
+use APP\User;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,3 +12,5 @@ Route::resource('battle', 'BattlesController');
 Route::resource('battle-history','BattleHistory');
 Route::resource('battle-mu', 'BattleMUController');
 Route::resource('country', 'Country');
+Route::resource('players', 'PlayersController');
+Route::resource('shame' ,'Shame');

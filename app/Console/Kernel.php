@@ -13,7 +13,12 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        'App\Console\Commands\BattleUpdate',
+        'App\Console\Commands\FastUpdatePlayer',
+        'App\Console\Commands\PlayerUpdate',
+        'App\Console\Commands\PlayerUpdate2',
+        'App\Console\Commands\PlayerUpdate3',
+        'App\Console\Commands\PlayerUpdate4'
     ];
 
     /**
@@ -24,8 +29,25 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('battle:update')
+                 ->everyMinute()
+                 ->withoutOverlapping();
+        $schedule->command('fast:updateplayer')
+                 ->everyThirtyMinutes()
+                 ->withoutOverlapping();
+        $schedule->command('player:update')                
+                 ->cron('0 */3 * * *')
+                 ->withoutOverlapping();
+        $schedule->command('player:update2')                
+                 ->cron('0 */3 * * *')
+                 ->withoutOverlapping();
+        $schedule->command('player:update3')                
+                 ->cron('0 */3 * * *')
+                 ->withoutOverlapping();
+        $schedule->command('player:update4')                
+                 ->cron('0 */3 * * *')
+                 ->withoutOverlapping();
+    
     }
 
     /**
