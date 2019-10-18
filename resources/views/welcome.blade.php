@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('master')
 
 @section('content')
@@ -85,5 +84,3 @@ use App\Http\Controllers\Controller;
 @section('footer')
 
 @endsection
-=======
->>>>>>> 2cff0404e401cb6d26473ec75d0f7d5233020524
