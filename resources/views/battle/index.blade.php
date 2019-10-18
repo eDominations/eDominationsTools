@@ -46,6 +46,9 @@ foreach($getsomething->getBattles()[0] as $row);
                 <a href="/players">Players</a>
                 </li>
                 <li>
+                <a href="/calculator">Calculator</a>
+                </li>
+                <li>
                 <a href="/shame">SHAME-WALL</a>
                 </li>
              </ul>

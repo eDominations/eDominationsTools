@@ -80,6 +80,9 @@ GROUP BY Unit , mudetails.MilitaryUnit, Country');
                 <a href="/players">Players</a>
                 </li>
                 <li>
+                <a href="/calculator">Calculator</a>
+                </li>
+                <li>
                 <a href="/shame">SHAME-WALL</a>
                 </li>
              </ul>

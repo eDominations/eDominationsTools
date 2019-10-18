@@ -18,7 +18,6 @@ header("Access-Control-Allow-Origin: *");
     <link rel="stylesheet" href="/css/bootstrap.min.css" >
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="/css/style.css">
-
     <!-- Our Custom CSS -->
  
 

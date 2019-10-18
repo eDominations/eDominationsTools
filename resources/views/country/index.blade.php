@@ -10,9 +10,13 @@ use Illuminate\Routing\UrlGenerator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
+  <!DOCTYPE html>
+        <html>
+        <title>
+            eDominations-Tools
+        </title>
+        <head>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="/css/style.css">
@@ -43,6 +47,9 @@ use App\Http\Controllers\Controller;
                 </li>
                 <li>
                 <a href="/players">Players</a>
+                </li>
+                <li>
+                <a href="/calculator">Calculator</a>
                 </li>
                 <li>
                 <a href="/shame">SHAME-WALL</a>

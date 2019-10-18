@@ -18,6 +18,8 @@ use App\Http\Controllers\Controller;
 <link rel="stylesheet" href="/css/style.css">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 
 
@@ -47,6 +49,9 @@ use App\Http\Controllers\Controller;
                 <a href="/players">Players</a>
                 </li>
                 <li>
+                <a href="/calculator">Calculator</a>
+                </li>
+                <li>
                 <a href="/shame">SHAME-WALL</a>
                 </li>
              </ul>
@@ -58,10 +63,8 @@ use App\Http\Controllers\Controller;
 <div class="col-8"> </div>
   <div class="col-4"></div>
 
-<?php  
-$test = DB::table('battles')->first();
-$battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','>',19259)->get(); 
-?>
+
+   
 
 <h1 class="text-center"><br>Welcome eDominations-Tools</h1></br>
 <h2 class="text-center"><br>Now eDominations-Tools is alive..</h2></br>
@@ -69,6 +72,11 @@ $battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','
 <h4 class="text-center">Players stats has top 300 in search panel , for lower than 300 please use page numbers in bottom .</h4>
 <h4 class="text-center"><br>In Battle History Page takes some seconds for load, please wait it( it gets 19.000 battle with details, so you wont have to search for it)  If you have any Question-Problem-Idea please write <a href="https://www.edominations.com/en/messages/compose/21460" target="_blank">here</a> or <a href="https://www.edominations.com/en/messages/compose/1140" target="_blank">here</a>.</h4></br>
 <h2 class="text-center">STAY TUNED FOR NEXT UPDATES..<i class="glyphicon glyphicon-thumbs-up" style="color:blue"></h2></i>
+
+
+
+ 
+
 </body></html>
 
 @endsection

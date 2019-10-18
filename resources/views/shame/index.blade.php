@@ -22,19 +22,20 @@ foreach($getsomething->getBattles()[0] as $row);
         <link rel="stylesheet" href="/css/style.css">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+          
+        
         </head>
       
 
 
         <body>
+        <div id="img-holder">
         <?php
-   
-        
+       
         $bat = DB::select("SELECT Name, CS , ID , Strength,Banned , LastSeenAgo, TotalDMG , Level
         FROM players
         WHERE Banned='yes'
-        AND LastSeenAgo <= 14");
-        
+        AND LastSeenAgo <= 14");       
         ?>
 
         
@@ -61,6 +62,9 @@ foreach($getsomething->getBattles()[0] as $row);
                 </li>
                 <li>
                 <a href="/players">Players</a>
+                </li>
+                <li>
+                <a href="/calculator">Calculator</a>
                 </li>
                 <li>
                 <a href="/shame">SHAME-WALL</a>
@@ -142,7 +146,7 @@ foreach ($bat as $obj5)
           });
         </script>
         </div>
-
+        </div>
         </body>
         </html>
 

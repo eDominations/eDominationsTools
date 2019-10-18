@@ -75,6 +75,9 @@ $battleAtt = DB::table('battledamage')->where('SIDE','attack')->get();?>
                 <a href="/players">Players</a>
                 </li>
                 <li>
+                <a href="/calculator">Calculator</a>
+                </li>
+                <li>
                 <a href="/shame">SHAME-WALL</a>
                 </li>
              </ul>
@@ -86,8 +89,8 @@ foreach($GetBTL->getBattles()[0] as $rrw)
  ?>
 
    <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-1">
+
+        <div class="col-lg-6">
           <div class="col-lg-12"  style="border:1px;">
             <h1 class="text-center"> 
             <td><img src=<?php echo '"/img/flags/'.$rrw['AttackerSlug'].'.png"'; ?> width='120' height='120'></td>
@@ -99,7 +102,7 @@ foreach($GetBTL->getBattles()[0] as $rrw)
             <br>Total Players Hitted: <?php echo number_format($battleAttackC) ?> </strong></br></p>
           </div>
         </div>
-        <div class="col-lg-3"></div>
+        <div class="col-lg-1"></div>
         <div class="col-lg-3">
           <div class="col-lg-12"> 
             <h1 class="text-center"> 

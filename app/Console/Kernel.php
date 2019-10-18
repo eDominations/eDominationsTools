@@ -16,9 +16,7 @@ class Kernel extends ConsoleKernel
         'App\Console\Commands\BattleUpdate',
         'App\Console\Commands\FastUpdatePlayer',
         'App\Console\Commands\PlayerUpdate',
-        'App\Console\Commands\PlayerUpdate2',
-        'App\Console\Commands\PlayerUpdate3',
-        'App\Console\Commands\PlayerUpdate4'
+        'App\Console\Commands\PlayerUpdate2'
     ];
 
     /**
@@ -39,14 +37,7 @@ class Kernel extends ConsoleKernel
                  ->cron('0 */3 * * *')
                  ->withoutOverlapping();
         $schedule->command('player:update2')                
-                 ->cron('0 */3 * * *')
-                 ->withoutOverlapping();
-        $schedule->command('player:update3')                
-                 ->cron('0 */3 * * *')
-                 ->withoutOverlapping();
-        $schedule->command('player:update4')                
-                 ->cron('0 */3 * * *')
-                 ->withoutOverlapping();
+                 ->cron('0 */3 * * *');
     
     }
 

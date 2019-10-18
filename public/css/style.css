@@ -2,3 +2,8 @@ body{
 
 background-color: #b9b7b7;
 }
+#img-holder{
+    background-image: url('/shame.png');
+    background-repeat: round;
+    background-size: auto 500px;
+}
