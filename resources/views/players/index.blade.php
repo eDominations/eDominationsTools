@@ -19,75 +19,76 @@ foreach($getsomething->getBattles()[0] as $row);
         </title>
         <head>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/style2.css">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        </head>
-      
-
-
+  <style>
+         table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #1a1818;
+    padding-top: 5px;
+    margin-top: 5px;
+    }
+    td,th {
+    border-top: 1px solid #1a1818;
+        }
+    tbody tr:nth-child(even)  td { background-color: #1a1818; }
+    @media screen and (max-width: 540px) {
+	table {
+		overflow-x: auto;
+		display: block;
+}
+}</style>
+       <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/battle">Battles</a></li>
+            <li><a href="/battle-history">Battle Histor</a></li>
+            <li><a href="/country">Countries</a></li>
+            <li><a href="/players">Players</a></li>
+            <li><a href="/calculator">Calculator</a></li>
+            <li><a href="/shame">Shame-Wall</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+    </head>      
         <body>
         <?php
 $player= DB::table('players')->join('mudetails','mudetails.ID','=','players.MilitaryUnitID')->select("players.Name","players.Energy","players.Level","players.Strength","players.CS","players.MilitaryUnitID","players.MilitaryRank","players.DMG1HIT","players.TotalDMG","players.MilitaryRank2" , "mudetails.MilitaryUnit" , "players.ID")->orderBy("players.TotalDMG" ,"DESC")->paginate(300);
 ?>
-
-        
-        <div id="wrapper">
-        <div class="overlay"></div>
-    
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                   
-                </li>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/battle">Battles</a>
-                </li>
-                <li>
-                    <a href="/battle-history">Battle History</a>
-                </li>
-                <li>
-                <a href="/country">Countries</a>
-                </li>
-                <li>
-                <a href="/players">Players</a>
-                </li>
-                <li>
-                <a href="/calculator">Calculator</a>
-                </li>
-                <li>
-                <a href="/shame">SHAME-WALL</a>
-                </li>
-             </ul>
-        </nav></div>
-
-
-        <div class="row justify-content-center">        
-        <div class="col-11">
-        <table class="table table-light table-responsive-sm table-bordered players " >
-        <thead class="thead-dark">
-
-
+<div class="row"> ........</div>
+  <div class="row"> ........</div>
+  <div class="row">
+    <div class="col-md-12 col-xs-12">
+           
+   
+    <div class="row justify-content-center">          
+    <table class="table table-dark table-bordered players" >
+    <thead class="thead-dark">
         <tr>
                 <th colspan="11" ><h2 align="center">PLAYERS</h2></th>
                 </tr>
          
             
-                <th scope="col"> </th>
-                <th scope="col">ID</th>
-                <th scope="col">NAME </th>
-                <th scope="col">ENERGY</th>
-                <th scope="col">LEVEL</th>
-                <th scope="col">STRENGH</th>
-                <th scope="col">CITIZENSHIP</th>
-                <th scope="col">MILITARY UNIT</th>
-                <th scope="col">MILITARY RANK</th>
-                <th scope="col">DAMAGE POWER</th>
-                <th scope="col">TOTAL DMG(LIFE-TIME)</th>
+                <th> </th>
+                <th>ID</th>
+                <th>NAME </th>
+                <th>ENERGY</th>
+                <th>LEVEL</th>
+                <th>STRENGH</th>
+                <th>CITIZENSHIP</th>
+                <th>MILITARY UNIT</th>
+                <th>MILITARY RANK</th>
+                <th>DAMAGE POWER</th>
+                <th>TOTAL DMG(LIFE-TIME)</th>
                 </thead>
  <tbody>
 
@@ -111,7 +112,7 @@ foreach ($player as $obj5)
  </tbody>
  
  <tfoot>
- <th scope="col"> </th>
+ <th > </th>
                 <th scope="col">ID</th>
                 <th scope="col">NAME </th>
                 <th scope="col">ENERGY</th>
@@ -123,9 +124,9 @@ foreach ($player as $obj5)
                 <th scope="col">DAMAGE POWER</th>
                 <th scope="col">TOTAL DMG(LIFE-TIME)</th>
  </tfoot>
- </table> {{$player->links()}}</div>
- </div>
-
+ </table> 
+ </div> </div> </div> </div> </div>
+ </div> </div> </div> </div> </div>
 
 
 
@@ -139,7 +140,7 @@ foreach ($player as $obj5)
         <script>
        var table = $('.players').DataTable({
         paging: true,
-        lengthMenu: [23]
+        lengthMenu: [11]
         });
 
         $('.players tfoot th').each( function (){
@@ -156,7 +157,7 @@ foreach ($player as $obj5)
           });
           });
         </script>
-        </div>
+       
 
         </body>
         </html>

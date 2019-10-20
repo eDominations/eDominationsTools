@@ -42,46 +42,40 @@ $battleAtt = DB::table('battledamage')->where('SIDE','attack')->get();?>
         <title>
             eDominations-Tools
         </title>
+        <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="/css/style2.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <style>
+    .h1 .br h1 br{
+        background-color: rgb(165, 173, 169);  
+        color: rgb(165, 173, 169);
+    }</style>
+</head> 
     
-    <link rel="stylesheet" href="/css/bootstrap.min.css" >
-   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
-   <link rel="stylesheet" href="/css/style.css">
-
    
-    <body>
-
-    <div id="wrapper">
-        <div class="overlay"></div>
-    
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                   
-                </li>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/battle">Battles</a>
-                </li>
-                <li>
-                    <a href="/battle-history">Battle History</a>
-                </li>
-                <li>
-                <a href="/country">Countries</a>
-                </li>
-                <li>
-                <a href="/players">Players</a>
-                </li>
-                <li>
-                <a href="/calculator">Calculator</a>
-                </li>
-                <li>
-                <a href="/shame">SHAME-WALL</a>
-                </li>
-             </ul>
-        </nav></div>
+   <body>        <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/battle">Battles</a></li>
+            <li><a href="/battle-history">Battle Histor</a></li>
+            <li><a href="/country">Countries</a></li>
+            <li><a href="/players">Players</a></li>
+            <li><a href="/calculator">Calculator</a></li>
+            <li><a href="/shame">Shame-Wall</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <?php
 $GetBTL = new Endpointsv2($uriSegments[2]);
@@ -89,7 +83,6 @@ foreach($GetBTL->getBattles()[0] as $rrw)
  ?>
 
    <div class="row">
-
         <div class="col-lg-6">
           <div class="col-lg-12"  style="border:1px;">
             <h1 class="text-center"> 
@@ -120,7 +113,7 @@ foreach($GetBTL->getBattles()[0] as $rrw)
     <div class="row justify-content-around">
     <div class="col-4">
     
-        <table class='table table-striped table-bordered battletable ' style="width 100%">
+        <table class='table table-striped table-bordered table-light battletable ' style="width 100%">
           <thead>
       
           <tr>  <th>Picture</th>
@@ -156,9 +149,8 @@ foreach($GetBTL->getBattles()[0] as $rrw)
         
 
 
-
 <div class='col-4'>
-        <table class='table table-striped table-bordered battletable2 ' style="width 100%">
+        <table class='table table-striped table-bordered table-light battletable2 ' style="width 100%">
           <thead>      
           <tr>  <th>Picture</th>
                 <th>NAME</th>
@@ -179,7 +171,7 @@ foreach($GetBTL->getBattles()[0] as $rrw)
           
           </tbody>       
           </table>
-         </div></div> </div>
+         </div></div> </div></div></div>
 
 
 

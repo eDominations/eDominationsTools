@@ -16,12 +16,12 @@ use App\Http\Controllers\Controller;
   <head>
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="/css/style.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <style>
+  
     .panel2{
       padding: 25px;
     }
@@ -40,41 +40,24 @@ use App\Http\Controllers\Controller;
     </style>
 
   </head>
-
-
-
-
-  <div id="wrapper">
-    <div class="overlay"></div>
-
-    <nav class="navbar navbar-inverse navbar-fixed" id="sidebar-wrapper" role="navigation">
-      <ul class="nav sidebar-nav">
-        <li class="sidebar-brand">
-
-        </li>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/battle">Battles</a>
-        </li>
-        <li>
-          <a href="/battle-history">Battle History</a>
-        </li>
-        <li>
-          <a href="/country">Countries</a>
-        </li>
-        <li>
-          <a href="/players">Players</a>
-        </li>
-        <li>
-          <a href="/calculator">Calculator</a>
-        </li>
-        <li>
-          <a href="/shame">SHAME-WALL</a>
-        </li>
-      </ul>
-    </nav>
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/battle">Battles</a></li>
+            <li><a href="/battle-history">Battle Histor</a></li>
+            <li><a href="/country">Countries</a></li>
+            <li><a href="/players">Players</a></li>
+            <li><a href="/calculator">Calculator</a></li>
+            <li><a href="/shame">Shame-Wall</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
   <body>
@@ -113,8 +96,7 @@ use App\Http\Controllers\Controller;
               
               <div class="input-group-prepend col-md-3 col-xs-12 booster2">
                 <select class="custom-select" id="booster">
-                  <option selected>SELECT YOUR BOOSTER Q?</option>
-                  <option value="1">Q0 (NO BOOSTER)</option>
+                  <option selected value='1'>SELECT YOUR BOOSTER Q?</option>
                   <option value="1.1">Q1</option>
                   <option value="1.2">Q2</option>
                   <option value="1.3">Q3</option>
@@ -129,8 +111,7 @@ use App\Http\Controllers\Controller;
 
               <div class="input-group-prepend col-md-3 col-xs-12">
                 <select class="custom-select" id="defensesystem">
-                  <option selected>DEFENSE SYSTEM Q?</option>
-                  <option value="1">Q0 (NO DEFENSE SYSTEM)</option>
+                  <option selected value='1'>DEFENSE SYSTEM Q?</option>
                   <option value="0.97">Q1</option>
                   <option value="0.95">Q2</option>
                   <option value="0.93">Q3</option>
@@ -170,7 +151,7 @@ use App\Http\Controllers\Controller;
                   </div>
                   <div class="input-group-prepend col-md-3 col-xs-12">
                 <select class="custom-select" id="mutrait">
-                  <option selected>Your Mu LVL Bonus?</option>
+                  <option selected value='1'>Your Mu LVL Bonus?</option>
                   <option value="1">Novice %0</option>
                   <option value="1.02">Regular %2</option>
                   <option value="1.04">Veteran %4</option>

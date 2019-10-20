@@ -37,52 +37,61 @@ $battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','
             eDominations-Tools
         </title>
       <head>
-      <link rel="stylesheet" href="/css/style.css">   
+      <link rel="stylesheet" href="/css/style2.css">   
       <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+ <style>
+       table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #1a1818;
+    padding-top: 40px;
+    margin-top: 50px;
+    }
+    td,th {
+    border-top: 1px solid #1a1818;
+    padding: 4px 8px;
+    }
+    tbody tr:nth-child(even)  td { background-color: #1a1818; }
+    @media screen and (max-width: 640px) {
+	table {
+		overflow-x: auto;
+		display: block;
+}
+}
+ </style>
  </head>
-      <div id="wrapper">
-        <div class="overlay"></div>
+ <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/battle">Battles</a></li>
+            <li><a href="/battle-history">Battle Histor</a></li>
+            <li><a href="/country">Countries</a></li>
+            <li><a href="/players">Players</a></li>
+            <li><a href="/calculator">Calculator</a></li>
+            <li><a href="/shame">Shame-Wall</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div><body>
+
+     
     
-        
-        <nav class="navbar navbar-inverse navbar-fixed" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                   
-                </li>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/battle">Battles</a>
-                </li>
-                <li>
-                    <a href="/battle-history">Battle History</a>
-                </li>
-                <li>
-                <a href="/country">Countries</a>
-                </li>
-                <li>
-                <a href="/players">Players</a>
-                </li>
-                <li>
-                <a href="/calculator">Calculator</a>
-                </li>
-                <li>
-                <a href="/shame">SHAME-WALL</a>
-                </li>
-             </ul>
-        </nav></div>
-        <body class='body'>
-        <body>
-        
-       
 
-
-        <div class="row justify-content-center">
-    <div class="col-auto">
-        <table class="table table-dark table-lg table-bordered battlehistory " >
+  <div class="row"> ........</div>
+  <div class="row"> ........</div>
+  <div class="row"> ........</div>
+    <div class="row justify-content-center">
+        <div class="table-responsive">
+    <div class="col-md-12">
+        <table class="table table-dark table-bordered battlehistory " >
         <thead class="thead-dark">
             
          
@@ -133,7 +142,7 @@ $battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','
  </tfoot>
                 </table>
                 </div>
-  </div>
+  </div></div></div></div>
       
 
 
@@ -169,7 +178,7 @@ $battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','
           });
           });
         </script>
-        </div>
+        
         </body>
         </html>
 
