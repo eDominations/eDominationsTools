@@ -19,7 +19,7 @@ use App\Http\Controllers\Controller;
         <head>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" href="/css/style2.css">
+<link rel="stylesheet" href="/css/style3.css">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 </head>
@@ -35,9 +35,10 @@ use App\Http\Controllers\Controller;
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/battle">Battles</a></li>
-            <li><a href="/battle-history">Battle Histor</a></li>
+            <li><a href="/battle-history">Battle History</a></li>
             <li><a href="/country">Countries</a></li>
             <li><a href="/players">Players</a></li>
+	    <li><a href="/Military-Unit">Military Units</a></li>
             <li><a href="/calculator">Calculator</a></li>
             <li><a href="/shame">Shame-Wall</a></li>
           </ul>
@@ -94,14 +95,15 @@ $bt6 = DB::table('players')->where('LastSeenAgo','<',8 )->count();
             
          
         <tr>
-                <th colspan="8" ><h2 align="center">COUNTRY TABLE</h2></th>
+                <th colspan="9" ><h2 align="center">COUNTRY TABLE</h2></th>
                 </tr>
                 <th scope="col">FLAGS</th>
                 <th scope="col">COUNTRY</th>
                 <th scope="col">TOTAL PLAYERS</th>
                 <th scope="col">BANNED PLAYERS</th>
                 <th scope="col">AFK PLAYERS(MORE THN 7DAYS)</th>
-                <th scope="col">ACTIVE POPULATION</th>
+                <th scope="col">ACTIVE POPULATION</th><th>PERCENTAGE</th>
+
                 <th scope="col">DMG POWER</th>
                 <th scope="col">LAST 7 DAYS DMG!</th>
                 </thead>
@@ -147,7 +149,8 @@ if (isset($bat4[$i])){
          ."<td>". $bat33->PLY."</td>" 
          ."<td>". $bat22->Ban."</td>" 
          ."<td>". $bat55->CSS."</td>" 
-         ."<td>". $bat44->CSS.str_repeat("&nbsp;", 8).'%'.number_format($new = ($bat44->CSS / $bt6) * '100' ,2, ',', ' ')."</td>" 
+         ."<td>". $bat44->CSS."</td>" 
+         ."<td>". '%'.number_format($new = ($bat44->CSS / $bt6) * '100' ,2, ',', ' ')."</td>" 
          ."<td>". number_format($battleMu->DMGPOWER)."</td>" 
          ."<td>". number_format($bat6->DMG)."</td>" 
          ."</tr>";

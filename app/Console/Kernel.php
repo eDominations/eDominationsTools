@@ -16,7 +16,10 @@ class Kernel extends ConsoleKernel
         'App\Console\Commands\BattleUpdate',
         'App\Console\Commands\FastUpdatePlayer',
         'App\Console\Commands\PlayerUpdate',
-        'App\Console\Commands\PlayerUpdate2'
+        'App\Console\Commands\PlayerUpdate2',
+        'App\Console\Commands\last7days',
+	'App\Console\Commands\Resources',
+	'App\Console\Commands\muinsert2'
     ];
 
     /**
@@ -28,16 +31,19 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('battle:update')
-                 ->everyMinute()
-                 ->withoutOverlapping();
+                 ->everyTenMinutes();
+	$schedule->command('resources:insert')
+		 ->hourly();
+	$schedule->command('mu:insert2')
+		 ->everyTenMinutes();
         $schedule->command('fast:updateplayer')
-                 ->everyThirtyMinutes()
-                 ->withoutOverlapping();
+                 ->everyThirtyMinutes();
         $schedule->command('player:update')                
-                 ->cron('0 */3 * * *')
-                 ->withoutOverlapping();
+                 ->hourly();
         $schedule->command('player:update2')                
-                 ->cron('0 */3 * * *');
+                 ->daily();
+	$schedule->command('last7:days')
+                 ->daily();
     
     }
 

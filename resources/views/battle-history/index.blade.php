@@ -28,7 +28,7 @@ $getsomething = new Endpointsv2('');
 $test = DB::table('battles')->first();
 
 
-$battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','>',17000)->get(); 
+$battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','>',18000)->get(); 
 
 ?>
         <!DOCTYPE html>
@@ -37,7 +37,7 @@ $battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','
             eDominations-Tools
         </title>
       <head>
-      <link rel="stylesheet" href="/css/style2.css">   
+      <link rel="stylesheet" href="/css/style3.css">   
       <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -71,9 +71,10 @@ $battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/battle">Battles</a></li>
-            <li><a href="/battle-history">Battle Histor</a></li>
+            <li><a href="/battle-history">Battle History</a></li>
             <li><a href="/country">Countries</a></li>
             <li><a href="/players">Players</a></li>
+	    <li><a href="/Military-Unit">Military Units</a></li>
             <li><a href="/calculator">Calculator</a></li>
             <li><a href="/shame">Shame-Wall</a></li>
           </ul>

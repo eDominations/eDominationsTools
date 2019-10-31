@@ -14,14 +14,13 @@ use App\Http\Controllers\Controller;
 <html lang="en">
 
   <head>
-
+    <link rel="stylesheet" href="/css/style.css">  
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> 
     <style>
-  
     .panel2{
       padding: 25px;
     }
@@ -49,9 +48,10 @@ use App\Http\Controllers\Controller;
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/battle">Battles</a></li>
-            <li><a href="/battle-history">Battle Histor</a></li>
+            <li><a href="/battle-history">Battle History</a></li>
             <li><a href="/country">Countries</a></li>
             <li><a href="/players">Players</a></li>
+	    <li><a href="/Military-Unit">Military Units</a></li>
             <li><a href="/calculator">Calculator</a></li>
             <li><a href="/shame">Shame-Wall</a></li>
           </ul>

@@ -43,9 +43,10 @@ foreach($getsomething->getBattles()[0] as $row);
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/battle">Battles</a></li>
-            <li><a href="/battle-history">Battle Histor</a></li>
+            <li><a href="/battle-history">Battle History</a></li>
             <li><a href="/country">Countries</a></li>
             <li><a href="/players">Players</a></li>
+	    <li><a href="/Military-Unit">Military Units</a></li>
             <li><a href="/calculator">Calculator</a></li>
             <li><a href="/shame">Shame-Wall</a></li>
           </ul>

@@ -14,7 +14,7 @@ use Carbon\Carbon;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<script data-ad-client="ca-pub-9923641346375620" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="/css/style2.css">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
@@ -31,9 +31,10 @@ use Carbon\Carbon;
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/battle">Battles</a></li>
-            <li><a href="/battle-history">Battle Histor</a></li>
+            <li><a href="/battle-history">Battle History</a></li>
             <li><a href="/country">Countries</a></li>
             <li><a href="/players">Players</a></li>
+	    <li><a href="/Military-Unit">Military Units</a></li>
             <li><a href="/calculator">Calculator</a></li>
             <li><a href="/shame">Shame-Wall</a></li>
           </ul>
