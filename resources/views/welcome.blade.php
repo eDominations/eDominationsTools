@@ -9,139 +9,115 @@ use App\Http\Helpers\Endpointsv2;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<script data-ad-client="ca-pub-9923641346375620" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="/css/style2.css">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-</head>
-
-  <div id="wrapper">
-        <div class="overlay"></div>
-    
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                   
-                </li>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/battle">Battles</a>
-                </li>
-                <li>
-                    <a href="/battle-history">Battle History</a>
-                </li>
-                <li>
-                    <a href="#">Team</a>
-                </li>
-                
-            
-              
-            </ul>
-        </nav></div>
-    
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>   
 <body>
-<?php 
-
-?>
-
-<?php
-            
-        
-        ?>
-
-
-
-</body>
-</html>
-
-=======
-    <?php
-    use Illuminate\Support\Facades\DB;
-    ?>
-
-    <div class="container-fluid">
-        eDominations
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/battle">Battles</a></li>
+            <li><a href="/battle-history">Battle History</a></li>
+            <li><a href="/country">Countries</a></li>
+            <li><a href="/players">Players</a></li>
+	    <li><a href="/Military-Unit">Military Units</a></li>
+            <li><a href="/calculator">Calculator</a></li>
+<li><a href="/hof">Hall Of Fame</a></li>
+	    <li><a href='/disaster'>Disasters</a></li>
+            <li><a href="/shame">Shame-Wall</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <?php
-    use App\Http\Helpers\Endpointsv2;
-    $getsomething = new Endpointsv2('');
-    foreach($getsomething->getBattles()[0] as $row);
-    ?>
-    <!DOCTYPE html>
-    <html>
-    <title>
-        GET DATA
-    </title>
-    <div id="main">
-        <div id="main_form">
-            <body>
-            <link rel="stylesheet" type="text/css" href="css/style.css" />
-            <table align="center" border="1px" style="width 600px; line-height:40px;">
-                <tr>
-                    <th colspan="9" ><h2 align="center">BATTLES</h2></th>
-                </tr>
-                <div id="main_table">
-                    <t>
-                        <th>TYPE</th>
-                        <th>ID</th>
-                        <th>ATTACKER <th>ROUND</th></th>
-                        <th>DEFENDER<th>ROUND</th></th>
-                        <th>REGION</th>
-                        <th>DATE</th>
-                        <th>BATTLE INFO</th>
-
-                    </t>
-
-                <?php DB::table('battles')->delete();?>
-                <?php
-
-                foreach ($getsomething->getBattles()[0] as $obj)  {
-                    foreach ($obj as $key => $value) {
-                        $insertArr[str_slug($key,'')] = $value;
-                    }
-
-                    $test =  DB::table('battles')->updateOrInsert(
-                        array('id'=>$insertArr['id'],'attacker'=>$insertArr['attacker'],'defender'=> $insertArr['defender'],'region' => $insertArr['region'],'round' => $insertArr['round'],'roundatt' => $insertArr['roundatt'],'rounddef' => $insertArr['rounddef'],'date' => $insertArr['date']),
-                        array('id'=>$insertArr['id'],'attacker'=>$insertArr['attacker'],'defender'=> $insertArr['defender'],'region' => $insertArr['region'],'round' => $insertArr['round'],'roundatt' => $insertArr['roundatt'],'rounddef' => $insertArr['rounddef'],'date' => $insertArr['date'])
-                    );
-                }
-                ?>
-                <?php
-                foreach($getsomething->getBattles()[0] as $row)
-                {print "<tr>"
-                    ."<td>". $row['Type']."</td>"
-                    ."<td>". $row['ID'] ."</td>"
-                    ."<td><img src='img/flags/".$row['AttackerSlug'].".png' width='40' height='40'>". $row['Attacker'] ."</td>"
-                    ."<td><strong>".$row['RoundAtt']."</strong></td>"
-                    ."<td><img src='img/flags/".$row['DefenderSlug'].".png' width='40' height='40'>". $row['Defender'] ."</td>"
-                    ."<td><strong>".$row['RoundDef']."</strong></td>"
-                    ."<td>". $row['Region'] ."</td>"
-                    ."<td>". $row['Date'] ."</td>"
-                    .'<td><a href="/battle/'.$row['ID'].'">BATTLE INFO</a>'
-                    ."</td>"
-                    ."</tr>";
-
-                }
-                "</div></div>";?>
+  </div>
+  <div class="container">
+    <h1>Welcome to eDominations
+      <span class="txt-type" data-wait="2500" data-words='["Tools", "Stats", "Calculator"]'></span>
+    </h1>
+    <h2 class="text-center">STAY TUNED FOR NEXT UPDATES..<i class="glyphicon glyphicon-thumbs-up" style="color:red"></h2></i>
+  </div>
+  
+              
 
 
 
+   
+<script>class TypeWriter {
+  constructor(txtElement, words, wait = 3000) {
+    this.txtElement = txtElement;
+    this.words = words;
+    this.txt = '';
+    this.wordIndex = 0;
+    this.wait = parseInt(wait, 10);
+    this.type();
+    this.isDeleting = false;
+  }
+
+  type() {
+    const current = this.wordIndex % this.words.length;
+    const fullTxt = this.words[current];
+
+    if(this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    // Insert txt into element
+    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+    // Initial Type Speed
+    let typeSpeed = 300;
+
+    if(this.isDeleting) {
+      typeSpeed /= 2;
+    }
+
+    // If word is complete
+    if(!this.isDeleting && this.txt === fullTxt) {
+      // Make pause at end
+      typeSpeed = this.wait;
+      // Set delete to true
+      this.isDeleting = true;
+    } else if(this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      // Move to next word
+      this.wordIndex++;
+      // Pause before start typing
+      typeSpeed = 500;
+    }
+
+    setTimeout(() => this.type(), typeSpeed);
+  }
+}
 
 
+// Init On DOM Load
+document.addEventListener('DOMContentLoaded', init);
 
-
-            </table>
-            </body>
-        </div></div></div>
-
-    </html>
+// Init App
+function init() {
+  const txtElement = document.querySelector('.txt-type');
+  const words = JSON.parse(txtElement.getAttribute('data-words'));
+  const wait = txtElement.getAttribute('data-wait');
+  // Init TypeWriter
+  new TypeWriter(txtElement, words, wait);
+}</script>
+</body></html>
 
 @endsection
 

@@ -13,7 +13,16 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        'App\Console\Commands\BattleUpdate',
+        'App\Console\Commands\FastUpdatePlayer',
+        'App\Console\Commands\PlayerUpdate',
+        'App\Console\Commands\PlayerUpdate2',
+	'App\Console\Commands\PlayerUpdate3',
+        'App\Console\Commands\last7days',
+	'App\Console\Commands\Resources',
+	'App\Console\Commands\muinsert2',
+	'App\Console\Commands\last35days',
+	'App\Console\Commands\currency'
     ];
 
     /**
@@ -24,8 +33,28 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('battle:update')
+                 ->everyTenMinutes();
+	$schedule->command('currency:market')
+		 ->everyTenMinutes();
+	$schedule->command('resources:insert')
+		 ->hourly();
+	$schedule->command('mu:insert2')
+		 ->everyTenMinutes();
+        $schedule->command('fast:updateplayer')
+                 ->everyThirtyMinutes();
+        $schedule->command('player:update')                
+                 ->hourly();
+        $schedule->command('player:update2')                
+                 ->daily();
+	$schedule->command('last7:days')
+                 ->daily();
+	$schedule->command('player:update3')
+		 ->daily();
+	$schedule->command('last35:days')
+                 ->daily();
+	$schedule->command('command:muinsert')
+		 ->daily();    
     }
 
     /**
