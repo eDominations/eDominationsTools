@@ -39,7 +39,9 @@ class PlayerUpdate2 extends Command
      */
     public function handle()
     {
-$range = range(101,50000);
+$ttt = DB::table('players')->orderBy('ID','DESC')->first();
+$tt2 = $ttt->ID;
+$range = range(101,$tt2);
 foreach($range as $range2){
 $getsomething = new Endpointsv2($range2);
 foreach ($getsomething->getCitizen() as $insertArr)

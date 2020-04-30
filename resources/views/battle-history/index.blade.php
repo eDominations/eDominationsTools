@@ -28,7 +28,7 @@ $getsomething = new Endpointsv2('');
 $test = DB::table('battles')->first();
 
 
-$battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','>',18000)->get(); 
+$battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','>',23000)->get(); 
 
 ?>
         <!DOCTYPE html>
@@ -76,6 +76,8 @@ $battlehist2 = DB::table('battlehist')->where('ID','<',$test->ID )->where('ID','
             <li><a href="/players">Players</a></li>
 	    <li><a href="/Military-Unit">Military Units</a></li>
             <li><a href="/calculator">Calculator</a></li>
+	    <li><a href="/hof">Hall Of Fame</a></li>
+	<li><a href='/disaster'>Disasters</a></li>
             <li><a href="/shame">Shame-Wall</a></li>
           </ul>
         </div>

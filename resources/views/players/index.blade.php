@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\DB;
 ?>
 
 
-<?php
-use App\Http\Helpers\Endpointsv2;
-$getsomething = new Endpointsv2('');
-foreach($getsomething->getBattles()[0] as $row);
-?>
+
 
         <!DOCTYPE html>
         <html>
@@ -37,6 +33,8 @@ foreach($getsomething->getBattles()[0] as $row);
             <li><a href="/players">Players</a></li>
 	    <li><a href="/Military-Unit">Military Units</a></li>
             <li><a href="/calculator">Calculator</a></li>
+<li><a href="/hof">Hall Of Fame</a></li>
+<li><a href='/disaster'>Disasters</a></li>
             <li><a href="/shame">Shame-Wall</a></li>
           </ul>
         </div>

@@ -17,9 +17,12 @@ class Kernel extends ConsoleKernel
         'App\Console\Commands\FastUpdatePlayer',
         'App\Console\Commands\PlayerUpdate',
         'App\Console\Commands\PlayerUpdate2',
+	'App\Console\Commands\PlayerUpdate3',
         'App\Console\Commands\last7days',
 	'App\Console\Commands\Resources',
-	'App\Console\Commands\muinsert2'
+	'App\Console\Commands\muinsert2',
+	'App\Console\Commands\last35days',
+	'App\Console\Commands\currency'
     ];
 
     /**
@@ -32,6 +35,8 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('battle:update')
                  ->everyTenMinutes();
+	$schedule->command('currency:market')
+		 ->everyTenMinutes();
 	$schedule->command('resources:insert')
 		 ->hourly();
 	$schedule->command('mu:insert2')
@@ -44,7 +49,12 @@ class Kernel extends ConsoleKernel
                  ->daily();
 	$schedule->command('last7:days')
                  ->daily();
-    
+	$schedule->command('player:update3')
+		 ->daily();
+	$schedule->command('last35:days')
+                 ->daily();
+	$schedule->command('command:muinsert')
+		 ->daily();    
     }
 
     /**

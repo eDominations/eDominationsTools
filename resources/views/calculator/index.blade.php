@@ -66,7 +66,9 @@ use App\Http\Controllers\Controller;
         <div class="col-md-12 col-xs-12">
           <div class="panel panel-default">
             <div class="panel-heading ">CALCULATOR</div>
+            <a href="/calculator/hitcount" >Go to Google</a>
             <div class="panel-body panel2">
+            
               <div class="row">
                 <div class="col-md-6 col-xs-12"> <label for="search">ID OR NAME</label>
                   <input type="text" name='search' class='form-control' id='search' placeholder='PUT YOUR ID OR NAME , IT WILL BE AUTOCOMPLETED..'></div>

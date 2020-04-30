@@ -40,6 +40,8 @@ use App\Http\Controllers\Controller;
             <li><a href="/players">Players</a></li>
 	    <li><a href="/Military-Unit">Military Units</a></li>
             <li><a href="/calculator">Calculator</a></li>
+<li><a href="/hof">Hall Of Fame</a></li>
+<li><a href='/disaster'>Disasters</a></li>
             <li><a href="/shame">Shame-Wall</a></li>
           </ul>
         </div>
@@ -65,6 +67,8 @@ GROUP BY CS");
 $bat4 = DB::select("SELECT COUNT(CS) AS CSS , CS
 FROM players
 WHERE LastSeenAgo <= 8
+AND Level >= 23
+AND Strength >= 14000
 GROUP BY CS");
 
 $bat5 = DB::select("SELECT COUNT(CS) AS CSS , CS
@@ -80,7 +84,7 @@ LEFT JOIN last7days ON players.ID = last7days.ID2
 GROUP BY countryname.NAME");
 
 
-$bt6 = DB::table('players')->where('LastSeenAgo','<',8 )->count(); 
+$bt6 = DB::table('players')->where('LastSeenAgo','<',8 )->where('Level','>=',23)->where('Strength','>=',14000)->count(); 
 
 
 ?>
@@ -145,7 +149,7 @@ if (isset($bat4[$i])){
          echo 
          "<tr>"
          ."<td><img src='img/flags2/".str_replace(" ", "-",$bat22->CS).".png' width='50' height='50'>"."</td>" 
-         ."<td>". $bat22->CS."</td>" 
+         ."<td><a href='/country/".str_replace(" ", "-",$bat22->CS)."'>". $bat22->CS."</td></a>"  
          ."<td>". $bat33->PLY."</td>" 
          ."<td>". $bat22->Ban."</td>" 
          ."<td>". $bat55->CSS."</td>" 

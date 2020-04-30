@@ -5,12 +5,13 @@
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use App\Http\Helpers\Endpointsv1;
 use App\Http\Helpers\Endpointsv2;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
-$getsomething = new Endpointsv2($uriSegments[2]);?>
+$getsomething = new Endpointsv1($uriSegments[2]);?>
 
     <?php DB::table('battledamage')->delete();?>
     <?php foreach ($getsomething->getBattleDamage('') as $obj)  {
@@ -71,6 +72,8 @@ $battleAtt = DB::table('battledamage')->where('SIDE','attack')->get();?>
             <li><a href="/players">Players</a></li>
  	    <li><a href="/Military-Unit">Military Units</a></li>
             <li><a href="/calculator">Calculator</a></li>
+<li><a href="/hof">Hall Of Fame</a></li>
+	<li><a href='/disaster'>Disasters</a></li>
             <li><a href="/shame">Shame-Wall</a></li>
           </ul>
         </div>

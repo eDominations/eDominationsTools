@@ -41,7 +41,7 @@ class MuInsert2 extends Command
     {
         ##### FOR MU DATA INSERT  
            
-        $range = range(1,1022);
+        $range = range(1,1094);
 
         foreach($range as $range2){
         $getsomething = new Endpointsv2($range2);

@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Http\Helpers\Endpointsv2;
+use App\Http\Helpers\Endpointsv1;
 use Illuminate\Support\Facades\DB;
 
 class MuInsert extends Command
@@ -41,15 +41,19 @@ class MuInsert extends Command
     {
         ##### FOR MU DATA INSERT  
         $mu = DB::table('mudetails')->latest('ID')->first();        
-        $range = range($mu->ID+1,1050);
+        $range = range(1174,1680);
 
         foreach($range as $range2){
-        $getsomething = new Endpointsv2($range2);
+        $getsomething = new Endpointsv1($range2);
         foreach ($getsomething->getMilitaryUnit() as $obj) 
-               
-    $test =  DB::table('mudetails')->updateOrInsert(
-    array('ID'=>$obj['ID'],'militaryunit'=>$obj['MilitaryUnit'],'Country'=> $obj['Country']),
-    array('ID'=>$obj['ID'],'militaryunit'=>$obj['MilitaryUnit'],'Country'=> $obj['Country']) );
+        if(isset($obj['MilitaryUnit'],$obj['Country']))
+       
+        $test =  DB::table('mudetails')->updateorInsert(
+            array('ID'=>$obj['ID'],'militaryunit'=>$obj['MilitaryUnit'],'Country'=> $obj['Country']),
+            array('ID'=>$obj['ID'],'militaryunit'=>$obj['MilitaryUnit'],'Country'=> $obj['Country']) );
+
+        
       }
     }
 }
+

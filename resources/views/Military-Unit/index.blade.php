@@ -37,6 +37,8 @@ foreach($getsomething->getBattles()[0] as $row);
             <li><a href="/players">Players</a></li>
 	    <li><a href="/Military-Unit">Military Units</a></li>
             <li><a href="/calculator">Calculator</a></li>
+<li><a href="/hof">Hall Of Fame</a></li>
+<li><a href='/disaster'>Disasters</a></li>
             <li><a href="/shame">Shame-Wall</a></li>
           </ul>
         </div>
@@ -107,7 +109,7 @@ ORDER BY `DMG`  DESC");
 
  echo 
  "<tr><td><img src='https://www.edominations.com/public/upload/group/".$obj5->ID.".jpg' width='40' height='40'>"."</td>" 
- ."<td><a href='https://www.edominations.com/en/military-unit/".$obj5->ID."'>" .$obj5->MilitaryUnit."</td></a>"
+  ."<td><a href='/Military-Unit/".$obj5->ID."'>" .$obj5->MilitaryUnit."</td></a>"
  ."<td><img src='/img/flags2/".str_replace(" ", "-",$obj5->Country).".png' width='50' height='50'>".$obj5->Country."</td>" 
  .'<td>'.$obj5->TOTAL.'</td>' 
  .'<td>'.$obj5->AFK.'</td>' 

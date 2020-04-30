@@ -39,8 +39,10 @@ class PlayerUpdate3 extends Command
      */
     public function handle()
     {
+
+$rng = DB::table('players')->latest('ID')->first();
                   ###VATANDAŞ (PLAYER UPDATE --- !!!! CRONA BAĞLANACAK) ##
-$range = range(55397,57000);
+$range = range($rng->ID+1,69000);
 foreach($range as $range2){
 $getsomething = new Endpointsv2($range2);
 foreach ($getsomething->getCitizen() as $insertArr)

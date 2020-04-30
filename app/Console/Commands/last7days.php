@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Http\Helpers\Endpointsv2;
+use App\Http\Helpers\Endpointsv1;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -44,22 +44,24 @@ class last7days extends Command
      * @return mixed
      */
     public function handle()
-    {   
-	DB::table('last7days')->delete();
+    {
+        DB::table('last7days')->delete();
         $date = \Carbon\Carbon::today()->subDays(7);
         $users = DB::table('battlehist')->whereDate('Date','>=', $date)->get();
         foreach($users as $usr){
-        $usr2 = $usr->ID;  
-        $getsomething = new Endpointsv2($usr2); 
+        $usr2 = $usr->ID;
+        $getsomething = new Endpointsv1($usr2);
         foreach ($getsomething->getBattleDamage() as $obj)
+
+
         
-       
-        
- 	DB::table('last7days')->updateOrInsert(
+        DB::table('last7days')->updateOrInsert(
     array('ID2'=>$obj['ID'],'name'=>$obj['Name'],'dmg' => $obj['DMG'],'hits' => $obj['Hits'],'unit' => $obj['Unit']),
     array('ID2'=>$obj['ID'],'name'=>$obj['Name'],'dmg' => $obj['DMG'],'hits' => $obj['Hits'],'unit' => $obj['Unit'])
 );}
 
 echo 'JOB IS DONE';
+
  
         }}
+
