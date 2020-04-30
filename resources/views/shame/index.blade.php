@@ -22,58 +22,52 @@ foreach($getsomething->getBattles()[0] as $row);
         <link rel="stylesheet" href="/css/style.css">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        </head>
-      
-
-
-        <body>
-        <?php
-   
+          
         
+        </head><body>
+        <?php
+       
         $bat = DB::select("SELECT Name, CS , ID , Strength,Banned , LastSeenAgo, TotalDMG , Level
         FROM players
         WHERE Banned='yes'
-        AND LastSeenAgo <= 14");
-        
+        AND LastSeenAgo <= 14");       
         ?>
 
         
-        <div id="wrapper">
-        <div class="overlay"></div>
+        <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/battle">Battles</a></li>
+            <li><a href="/battle-history">Battle History</a></li>
+            <li><a href="/country">Countries</a></li>
+            <li><a href="/players">Players</a></li>
+	    <li><a href="/Military-Unit">Military Units</a></li>
+            <li><a href="/calculator">Calculator</a></li>
+<li><a href="/hof">Hall Of Fame</a></li>
+<li><a href='/disaster'>Disasters</a></li>
+            <li><a href="/shame">Shame-Wall</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+               
+        
     
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                   
-                </li>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/battle">Battles</a>
-                </li>
-                <li>
-                    <a href="/battle-history">Battle History</a>
-                </li>
-                <li>
-                <a href="/country">Countries</a>
-                </li>
-                <li>
-                <a href="/players">Players</a>
-                </li>
-                <li>
-                <a href="/shame">SHAME-WALL</a>
-                </li>
-             </ul>
-        </nav></div>
-
-
         <div class="row justify-content-center">        
-        <div class="col-8">
+        <div class="col-md-9 col-xs-12">
         <div class='table-responsive'>
         <table class="table table-light table-bordered players" >
         <thead class="thead-dark">
+
+
 
 
         <tr>
@@ -110,7 +104,9 @@ foreach ($bat as $obj5)
  
  </div>
  </div>
-
+ </div>
+ </div> </div>
+ </div>
 
 
 
@@ -141,8 +137,6 @@ foreach ($bat as $obj5)
           });
           });
         </script>
-        </div>
-
         </body>
         </html>
 

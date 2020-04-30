@@ -11,10 +11,6 @@ use App\Http\Controllers\Controller;
 $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $getsomething = new Endpointsv2($uriSegments[2]);
 ?>
-
-
-           
-        
     <?php
 $battleDef = DB::table('battledamage')->where('SIDE','defense')->SUM('DMG');
 $battleAttack = DB::table('battledamage')->where('SIDE','attack')->SUM('DMG');
@@ -34,56 +30,39 @@ from  mudetails
 INNER JOIN battledamage  ON mudetails.ID = battledamage.Unit 
 WHERE Side="defense"
 GROUP BY Unit , mudetails.MilitaryUnit, Country');
-
-
-
-
-
-
-
-
 ?>
-
-
 
     <!DOCTYPE html>
     <html>
     <head>
-
+<link rel="stylesheet" href="/css/style3.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css" >
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
-
+   <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/battle">Battles</a></li>
+            <li><a href="/battle-history">Battle History</a></li>
+            <li><a href="/country">Countries</a></li>
+            <li><a href="/players">Players</a></li>
+	    <li><a href="/Military-Unit">Military Units</a></li>
+            <li><a href="/calculator">Calculator</a></li>
+		<li><a href="/hof">Hall Of Fame</a></li>
+<li><a href='/disaster'>Disasters</a></li>
+            <li><a href="/shame">Shame-Wall</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
     </head>
     <body>
-    <div id="wrapper">
-        <div class="overlay"></div>
-    
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                   
-                </li>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/battle">Battles</a>
-                </li>
-                <li>
-                    <a href="/battle-history">Battle History</a>
-                </li>
-                <li>
-                <a href="/country">Countries</a>
-                </li>
-                <li>
-                <a href="/players">Players</a>
-                </li>
-                <li>
-                <a href="/shame">SHAME-WALL</a>
-                </li>
-             </ul>
-        </nav></div>
+
 
 <?php
 $GetBTL = new Endpointsv2($uriSegments[2]);
@@ -125,7 +104,7 @@ foreach($GetBTL->getBattles()[0] as $rrw)
     <div class="row justify-content-around">
     <div class="col-4">
     
-        <table class='table table-striped table-bordered battletable ' style="width 100%">
+        <table class='table table-light table-bordered battletable ' style="width 100%">
           <thead>
       
           <tr>  <th>Picture</th>
@@ -168,7 +147,7 @@ echo
 
 
 <div class='col-4'>
-        <table class='table table-striped table-bordered battletable2 ' style="width 100%">
+        <table class='table table-light table-bordered battletable2 ' style="width 100%">
           <thead>
       
           <tr>

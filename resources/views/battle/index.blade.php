@@ -16,46 +16,47 @@ foreach($getsomething->getBattles()[0] as $row);
         <title>
             eDominations-Tools
         </title>
-        <link rel="stylesheet" href="/css/style.css">
-
-
+        <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="/css/style3.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script></head> 
+        
         <body>
+        <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/battle">Battles</a></li>
+            <li><a href="/battle-history">Battle History</a></li>
+            <li><a href="/country">Countries</a></li>
+            <li><a href="/players">Players</a></li>
+	    <li><a href="/Military-Unit">Military Units</a></li>
+            <li><a href="/calculator">Calculator</a></li>
+<li><a href="/hof">Hall Of Fame</a></li>
+<li><a href='/disaster'>Disasters</a></li>
+            <li><a href="/shame">Shame-Wall</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
         
-        <div id="wrapper">
-        <div class="overlay"></div>
-    
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                   
-                </li>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/battle">Battles</a>
-                </li>
-                <li>
-                    <a href="/battle-history">Battle History</a>
-                </li>
-                <li>
-                <a href="/country">Countries</a>
-                </li>
-                <li>
-                <a href="/players">Players</a>
-                </li>
-                <li>
-                <a href="/shame">SHAME-WALL</a>
-                </li>
-             </ul>
-        </nav></div>
-
-
-        
-        <div class="row justify-content-center">
-    <div class="col-auto">
-        <table class="table-hover table-dark table-sm table-bordered " >
+        <div class="row">..........</div>
+        <div class="row">..........</div>
+        <div class="row">..........</div>
+          
+        <div class="row justify-content-center">           
+        <div class="row">
+        <table class="table table-dark table-bordered" >
+        <div class="table-responsive">
         <thead class="thead-dark">
             <tr>
                 <th colspan="9" ><h2 align="center">BATTLES</h2></th>
@@ -109,7 +110,7 @@ foreach($getsomething->getBattles()[0] as $row)
   }
   "</div></div>";?>
 </tr>
- </tbody></table></div></div>
+ </tbody></table></div></div></div></div></div></div>
         </body>
         </html>
 

@@ -40,7 +40,7 @@ class FastUpdatePlayer extends Command
     public function handle()
     {
          ##HIZLI VATANDAŞ UPDATE - MU ÜZERİNDEN (LVL VE LASTSEENAGO YOK BURDA)##
-$range = range(1,1009);
+$range = range(1,1100);
             foreach($range as $range2){
             $getsomething = new Endpointsv2($range2);
            foreach ($getsomething->getUnitMembers() as $insertArr)

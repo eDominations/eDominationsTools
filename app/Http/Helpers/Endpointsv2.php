@@ -25,7 +25,8 @@ Class Endpointsv2
         11 => 'party',
         12 => 'newspaper',
         13 => 'articles',
-        14 => 'article'
+        14 => 'article',
+	15 => 'currency-market'
     ];
 
 
@@ -154,6 +155,14 @@ Class Endpointsv2
     public function getArticle(){
 
         $this->setLink(14);
+        $this->getApiResults();
+        return $this->result;
+
+    }
+
+    public function getCurrency(){
+
+        $this->setLink(15);
         $this->getApiResults();
         return $this->result;
 

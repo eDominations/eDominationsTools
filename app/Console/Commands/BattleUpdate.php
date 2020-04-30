@@ -43,7 +43,7 @@ class BattleUpdate extends Command
         
        ###SAVAŞ İÇİN UPDATE (ID INSERTLENMİŞ OLMALI-- !!!!CRONA BAĞLANACAK OLAN BU)###
 $bat = DB::table('battles')->first();
-foreach(range(19199,$bat->ID-1) as $range){
+foreach(range(23510,$bat->ID-1) as $range){
 $getsomething = new Endpointsv2($range);
 foreach ($getsomething->getBattles()[0] as $obj) {
 foreach ($obj as $key => $value) {

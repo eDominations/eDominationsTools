@@ -46,7 +46,7 @@ class PlayerUpdate extends Command
         foreach ($getsomething->getCitizenship() as $obj)
         foreach ($obj as $insertArr)
         $test =  DB::table('players')->where('ID', $insertArr)->update(
-        array('Name'=>$insertArr['Name'],'Level'=> $insertArr['Level'],'Strength' => $insertArr['Strength'],'LastSeen' => $insertArr['LastSeen'],'DMG1HIT' => $insertArr['DMG1HIT'],'LastSeenAgo' => $insertArr['LastSeenAgo'],'Banned' => $insertArr['Banned'],'MilitaryRank' => $insertArr['MilitaryRank'])
+        array('Name'=>$insertArr['Name'],'Level'=> $insertArr['Level'],'Strength' => $insertArr['Strength'],'LastSeen' => $insertArr['LastSeen'],'DMG1HIT' => $insertArr['DMG1HIT'],'LastSeenAgo' => $insertArr['LastSeenAgo'],'Banned' => $insertArr['Banned'],'MilitaryUnitID' => $insertArr['MilitaryUnitID'],'MilitaryRank' => $insertArr['MilitaryRank'])
         ); }
 
 echo 'JOB IS DONE';

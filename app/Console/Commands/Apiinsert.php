@@ -54,19 +54,19 @@ class Apiinsert extends Command
 
 
 ##SAVAŞ GEÇMİŞİ (BATTLE HISTORY INSERT)##
-     // foreach(range(19400,22000) as $range){
-   //  $getsomething = new Endpointsv2($range);
-   //  foreach ($getsomething->getBattles()[0] as $obj) {
-   //   foreach ($obj as $key => $value) {
-  //    $insertArr[str_slug($key,'')] = $value;
-//} 
+   foreach(range(23644,29999) as $range){
+  $getsomething = new Endpointsv2($range);
+ foreach ($getsomething->getBattles()[0] as $insertArr) {
+  
             
-  //   $test =  DB::table('battlehist')->updateOrInsert(
-  //   array('ID'=>$insertArr['id'],'attacker'=>$insertArr['attacker'],'attackerslug'=>$insertArr['attackerslug'],'defenderslug'=>$insertArr['defenderslug'],'type'=>$insertArr['type'],'defender'=> $insertArr['defender'],'region' => $insertArr['region'],'round' => $insertArr['round'],'roundatt' => $insertArr['roundatt'],'rounddef' => $insertArr['rounddef'],'date' => $insertArr['date'],'wall1' => $insertArr['wall1'],'wall2' => $insertArr['wall2'],'wall3' => $insertArr['wall3']),
-  //   array('ID'=>$insertArr['id'],'attacker'=>$insertArr['attacker'],'attackerslug'=>$insertArr['attackerslug'],'defenderslug'=>$insertArr['defenderslug'],'type'=>$insertArr['type'],'defender'=> $insertArr['defender'],'region' => $insertArr['region'],'round' => $insertArr['round'],'roundatt' => $insertArr['roundatt'],'rounddef' => $insertArr['rounddef'],'date' => $insertArr['date'],'wall1' => $insertArr['wall1'],'wall2' => $insertArr['wall2'],'wall3' => $insertArr['wall3'])
- //);
-//}}
-// echo 'JOB IS DONE';
+   $test =  DB::table('battlehist')->updateOrInsert(
+     array('ID'=>$insertArr['ID'],'Attacker'=>$insertArr['Attacker'],'attackerslug'=>$insertArr['AttackerSlug'],'defenderslug'=>$insertArr['DefenderSlug'],'Type'=>$insertArr['Type'],'Defender'=> $insertArr['Defender'],'Region' => $insertArr['Region'],'Round' => $insertArr['Round'],'Roundatt' => $insertArr['RoundAtt'],'Rounddef' => $insertArr['RoundDef'],'Date' => $insertArr['Date'],'Wall1' => $insertArr['Wall1'],'Wall2' => $insertArr['Wall2'],'Wall3' => $insertArr['Wall3']),
+     array('ID'=>$insertArr['ID'],'Attacker'=>$insertArr['Attacker'],'attackerslug'=>$insertArr['AttackerSlug'],'defenderslug'=>$insertArr['DefenderSlug'],'Type'=>$insertArr['Type'],'Defender'=> $insertArr['Defender'],'Region' => $insertArr['Region'],'Round' => $insertArr['Round'],'Roundatt' => $insertArr['RoundAtt'],'Rounddef' => $insertArr['RoundDef'],'Date' => $insertArr['Date'],'Wall1' => $insertArr['Wall1'],'Wall2' => $insertArr['Wall2'],'Wall3' => $insertArr['Wall3'])
+ );
+}}
+
+
+echo 'JOB IS DONE';
 
 ###SAVAŞ İÇİN UPDATE (ID INSERTLENMİŞ OLMALI-- !!!!CRONA BAĞLANACAK OLAN BU)###
 
@@ -121,3 +121,4 @@ class Apiinsert extends Command
 //         echo 'JOB IS DONE';
     }
 }
+
