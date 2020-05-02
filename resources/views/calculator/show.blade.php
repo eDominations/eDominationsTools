@@ -20,6 +20,7 @@ use App\Http\Controllers\Controller;
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> 
+    
     <style>
     .panel2{
       padding: 25px;
@@ -51,7 +52,7 @@ use App\Http\Controllers\Controller;
             <li><a href="/battle-history">Battle History</a></li>
             <li><a href="/country">Countries</a></li>
             <li><a href="/players">Players</a></li>
-	    <li><a href="/Military-Unit">Military Units</a></li>
+	          <li><a href="/Military-Unit">Military Units</a></li>
             <li><a href="/calculator">Calculator</a></li>
             <li><a href="/shame">Shame-Wall</a></li>
           </ul>
@@ -65,40 +66,45 @@ use App\Http\Controllers\Controller;
       <div class="row">
         <div class="col-md-12 col-xs-12">
           <div class="panel panel-default">
-            <div class="panel-heading ">CALCULATOR</div>
-            <div class="panel-body panel2">
-              <div class="row">
-              <div class=" col-md-6 col-xs-6">
-                <input type="text" class="form-control" id="HIT" placeholder="YOUR MAX ENERGY?">
-              </div>
-              <div class="row">
-              </div>
+            <div class="panel-heading ">HIT COUNTER CALCULATOR</div>            
+            <a href="/calculator" class='btn btn-dark btn-sg' >BACK TO DMG CALCULATOR!</a>
+            <div class="panel-body panel2">           
               <form>
-                   <div class=" col-md-6 col-xs-6">
-                <input type="text" class="form-control" id="HIT" placeholder="YOUR MAX ENERGY?">
+              <div class="form-group">
+              <img src="https://www.edominations.com/public/game/icons/energy-s.png"width='50' height='50'> <label for="ENRGY">PUT YOUR MAX ENERGY!</label>
+                <input type="text" class="form-control" id="ENRGY" placeholder="YOUR MAX ENERGY?">
               </div>
-              <div class="form-group col-md-6 col-xs-12">
-                <input type="text" class="form-control" id="HIT" placeholder="YOUR MAX ENERGY?">
+              <div class="form-group">
+              <img src="https://www.edominations.com/public/game/items/adrenaline-dose.png"width='50' height='50'> <label for="Q1">Q1 ADRENALINE?</label>
+                <input type="text" class="form-control" id="Q1" placeholder="Q1 ADRENALINE">
               </div>
-              <div class="form-group col-md-6 col-xs-12">
-                <input type="text" class="form-control" id="HIT" placeholder="YOUR MAX ENERGY?">
+              <div class="form-group">
+              <img src="https://www.edominations.com/public/game/items/adrenaline-dose.png"width='50' height='50'> <label for="Q2">Q2 ADRENALINE?</label>
+                <input type="text" class="form-control" id="Q2" placeholder="Q2 ADRENALINE">
               </div>
-              <div class="form-group col-md-6 col-xs-12">
-                <input type="text" class="form-control" id="HIT" placeholder="YOUR MAX ENERGY?">
+              <div class="form-group">
+              <img src="https://www.edominations.com/public/game/items/adrenaline-dose.png"width='50' height='50'> <label for="Q3">Q3 ADRENALINE?</label>
+                <input type="text" class="form-control" id="Q3" placeholder="Q3 ADRENALINE">
               </div>
-              <div class="form-group col-md-6 col-xs-12">
-                <input type="text" class="form-control" id="HIT" placeholder="YOUR MAX ENERGY?">
+              <div class="form-group">
+              <img src="https://www.edominations.com/public/game/items/adrenaline-dose.png"width='50' height='50'> <label for="Q4">Q4 ADRENALINE?</label>
+                <input type="text" class="form-control" id="Q4" placeholder="Q4 ADRENALINE">
               </div>
-              <div class="form-group col-md-6 col-xs-12">
-                <input type="text" class="form-control" id="HIT" placeholder="YOUR MAX ENERGY?">
+              <div class="form-group">
+              <img src="https://www.edominations.com/public/game/items/adrenaline-dose.png"width='50' height='50'> <label for="Q5">Q5 ADRENALINE?</label>
+                <input type="text" class="form-control" id="Q5" placeholder="Q5 ADRENALINE">
               </div>
-</form>
+              <div class="form-group">
+              <img src="https://www.edominations.com/public/game/items/energy-bar.png"width='50' height='50'> <label for="EB">ENERGY BARS?</label>
+                <input type="text" class="form-control" id="EB" placeholder="ENERGY BARS">
+              </div>
+              </form>
               
-              </div>      
+       
                   </div>
                   <button class='btn btn-primary btn-block ' onclick='calculate()'>CALCULATE!!</button>
                   <button class='btn btn-danger btn-block ' onclick='clearfields()'>CLEAR!!</button>
-                  <h1 id='answer'></h1>
+                  <h1 class='justify-content-center' id='answer'></h1>
               </div>
             </div>
           </div>
@@ -107,82 +113,38 @@ use App\Http\Controllers\Controller;
 
 
 
-      <script type='text/javascript'>
-        $('#search').autocomplete({
-          source: "{{ URL::to('calculator-search')}}",
-          minLenght: 3,
-          select: function(key, value) {
-
-            $('#edomid').val(value.item.ID)
-            $('#name').val(value.item.value)
-            $('#level').val(value.item.level)
-            $('#strength').val(value.item.STR)
-            $('#rank').val(value.item.Rank)
-            $('#dmg').val(value.item.dmg)
-          }
-        })
-
-      </script>
+   
   
       <script>
      
-      var field4 = 1;
+      var ENRGY = 0;
+      var Q1 = null;
+      var Q2 = null;
+      var Q3 = null;
+      var Q4 = null;
+      var Q5 = null;
+      var EB = null;
       function calculate() {
       const formatter = new Intl.NumberFormat('en-US', {
            
           })
 
         
-        if($("input#naturalenemy").is(":checked")){
-          field4 = parseFloat($("input#naturalenemy").val());
-        }
-          else{
-          field4= 1;
-    }
-    if($("input#special").is(":checked")){
-          field7 = parseFloat($("input#special").val());
-        }
-          else{
-          field7= 1;
-    }
-    if($("input#epic").is(":checked")){
-          field8 = parseFloat($("input#epic").val());
-        }
-          else{
-          field8= 1;
-    }
+  
 
-    if($("input#customControlValidation3").is(":checked")){
-          field10 = parseFloat($("input#customControlValidation3").val());
-        }
-          else{
-          field10= 1;
-    }
-    if($("input#customControlValidation4").is(":checked")){
-          field11 = parseFloat($("input#customControlValidation4").val());
-        }
-          else{
-          field11= 1;
-    }
-    if($("input#customControlValidation5").is(":checked")){
-          field12 = parseFloat($("input#customControlValidation5").val());
-        }
-          else{
-          field12= 1;
-    }
-
-          var field1 = document.getElementById('dmg').value;
-          var field2 = document.getElementById('defensesystem').value;
-          var field3 = document.getElementById('booster').value;
-          var field5 = document.getElementById('HIT').value;
-          var field6 = document.getElementById('weapon').value;
-          var field9 = document.getElementById('mutrait').value;
+          var ENRGY1 = document.getElementById('ENRGY').value/10;
+          var Q1 = document.getElementById('Q1').value*ENRGY1*20/100;
+          var Q2 = document.getElementById('Q2').value*ENRGY1*40/100;
+          var Q3 = document.getElementById('Q3').value*ENRGY1*60/100;
+          var Q4 = document.getElementById('Q4').value*ENRGY1*80/100;
+          var Q5 = document.getElementById('Q5').value*ENRGY1/1;
+          var EB = document.getElementById('EB').value*10;
 
 
-          var result = (parseFloat(field1) * parseFloat(field3) * parseFloat(field6) *  parseFloat(field2) * parseFloat(field5)*  field7*  field4*  field8* field11* field12* field10*  field9);
+          var result = (parseFloat(Q1) + parseFloat(Q2) +  parseFloat(Q3) + parseFloat(Q4) + parseFloat(Q5)+  parseFloat(EB));
 
           if (!isNaN(result)) {
-            document.getElementById('answer').innerHTML = 'Your DMG IS ' + formatter.format(result);
+            document.getElementById('answer').innerHTML = 'Your HIT COUNT is ' + formatter.format(result);
             $('answer').val('');
           }
 }
@@ -191,6 +153,13 @@ use App\Http\Controllers\Controller;
       function clearfields() {
         
 document.getElementById('answer').innerHTML = "";
+document.getElementById('ENRGY').value = "";
+document.getElementById('Q1').value = "";
+document.getElementById('Q2').value = "";
+document.getElementById('Q3').value = "";
+document.getElementById('Q4').value = "";
+document.getElementById('Q5').value = "";
+document.getElementById('EB').value = "";
 return;
 
 }</script>

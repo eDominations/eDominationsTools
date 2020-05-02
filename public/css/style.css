@@ -1,7 +1,9 @@
 body{
-
+  display: block;
   background-color: #b9b7b7;
   }
+
+  
   :root {
       --primary-color: rgba(30, 29, 78, 0.79);
       --overlay-color: rgba(30, 29, 78, 0.79);
@@ -219,7 +221,7 @@ body{
   
   body {
     font-family: 'Raleway', sans-serif;
-    height: 200vh;
+   
     background: #333 url('/backg.jpeg') no-repeat center center / cover;
     color: #ccc;
   }

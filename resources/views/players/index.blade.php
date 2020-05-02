@@ -88,7 +88,7 @@ foreach ($player as $obj5)
 
  echo 
 "<tr><td><img src='https://www.edominations.com/public/upload/citizen/".$obj5->ID.".jpg' width='80' height='80'>"."</td>" 
-."<td><a href='https://www.edominations.com/en/profile/".$obj5->ID."'>" .$obj5->name."</td></a>"
+."<td><a href='/players/".str_replace(" ", "-",$obj5->ID)."'>" .$obj5->name."</td></a>"   
 ."<td><div class='progress'><div class='progress-bar progress-bar-striped progress-bar-animated' role='progressbar' aria-valuenow=$obj5->Energy aria-valuemin='0' aria-valuemax= '2000' style='width:$obj5->Energy%'>"."</div></div></td>"
 .'<td>'.$obj5->Level.'</a></td>'  
 .'<td>'.$obj5->Strength.'</a></td>' 
