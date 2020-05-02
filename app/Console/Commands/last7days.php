@@ -56,8 +56,9 @@ class last7days extends Command
 
         
         DB::table('last7days')->updateOrInsert(
-    array('ID2'=>$obj['ID'],'name'=>$obj['Name'],'dmg' => $obj['DMG'],'hits' => $obj['Hits'],'unit' => $obj['Unit']),
-    array('ID2'=>$obj['ID'],'name'=>$obj['Name'],'dmg' => $obj['DMG'],'hits' => $obj['Hits'],'unit' => $obj['Unit'])
+            array('ID2'=>$obj['ID'],'name'=>$obj['Name'],'dmg' => $obj['DMG'],'BATTLEID' => $usr2,'hits' => $obj['Hits'],'unit' => $obj['Unit']),
+            array('ID2'=>$obj['ID'],'name'=>$obj['Name'],'dmg' => $obj['DMG'],'BATTLEID' => $usr2,'hits' => $obj['Hits'],'unit' => $obj['Unit'])
+        
 );}
 
 echo 'JOB IS DONE';

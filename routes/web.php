@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::resource('battle', 'BattlesController');
-Route::resource('calculator', 'AjaxController');
+Route::resource('calculator', 'Calc');
 Route::resource('battle-history','BattleHistory');
 Route::resource('battle-mu', 'BattleMUController');
 Route::resource('country', 'CountryC');

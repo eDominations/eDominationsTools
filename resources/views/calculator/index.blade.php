@@ -66,7 +66,7 @@ use App\Http\Controllers\Controller;
         <div class="col-md-12 col-xs-12">
           <div class="panel panel-default">
             <div class="panel-heading ">CALCULATOR</div>
-            <a href="/calculator/hitcount" >Go to Google</a>
+            <a href="/calculator/hitcount" class='btn btn-dark btn-lg' >FOR HIT COUNTER CLICK!</a>
             <div class="panel-body panel2">
             
               <div class="row">

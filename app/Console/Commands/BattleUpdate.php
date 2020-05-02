@@ -40,19 +40,21 @@ class BattleUpdate extends Command
     public function handle()
     {
 
-        
-       ###SAVAŞ İÇİN UPDATE (ID INSERTLENMİŞ OLMALI-- !!!!CRONA BAĞLANACAK OLAN BU)###
-$bat = DB::table('battles')->first();
-foreach(range(23510,$bat->ID-1) as $range){
-$getsomething = new Endpointsv2($range);
-foreach ($getsomething->getBattles()[0] as $obj) {
-foreach ($obj as $key => $value) {
-$insertArr[str_slug($key,'')] = $value;
-} 
-$test =  DB::table('battlehist')->where('ID', $range)->update(
-array('attacker'=>$insertArr['attacker'],'attackerslug'=>$insertArr['attackerslug'],'defenderslug'=>$insertArr['defenderslug'],'type'=>$insertArr['type'],'defender'=> $insertArr['defender'],'region' => $insertArr['region'],'round' => $insertArr['round'],'roundatt' => $insertArr['roundatt'],'rounddef' => $insertArr['rounddef'],'date' => $insertArr['date'],'wall1' => $insertArr['wall1'],'wall2' => $insertArr['wall2'],'wall3' => $insertArr['wall3'])
-);
-}}
- echo 'JOB IS DONE';
-    }
-}
+
+        ###SAVAŞ İÇİN UPDATE (ID INSERTLENMİŞ OLMALI-- !!!!CRONA BAĞLANACAK OLAN BU)###
+ $bat = DB::table('battles')->first();
+ foreach(range(24000,$bat->ID-1) as $range){
+ $getsomething = new Endpointsv2($range);
+ foreach ($getsomething->getBattles()[0] as $obj) {
+ foreach ($obj as $key => $value) {
+ $insertArr[str_slug($key,'')] = $value;
+ }
+ $test =  DB::table('battlehist')->where('ID', $range)->update(
+    array('attacker'=>$insertArr['attacker'],'attackerslug'=>$insertArr['attackerslug'],'defenderslug'=>$insertArr['defenderslug'],'type'=>$insertArr['type'],'defender'=> $insertArr['defender'],'region' => $insertArr['region'],'round' => $insertArr['round'],'roundatt' => $insertArr['roundatt'],'rounddef' => $insertArr['rounddef'],'date' => $insertArr['date'],'wall1' => $insertArr['wall1'],'wall2' => $insertArr['wall2'],'wall3' => $insertArr['wall3'])
+ );
+ }}
+  echo 'JOB IS DONE';
+     }
+ }
+ 
+ 
